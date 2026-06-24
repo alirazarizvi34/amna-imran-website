@@ -1,0 +1,535 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
+import { Container, Eyebrow, Hairline, Reveal } from "@/components/site/primitives";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import icfLogo from "@/assets/cred-icf.png.asset.json";
+import gallupLogo from "@/assets/cred-gallup.png.asset.json";
+import cdpLogo from "@/assets/cred-cdp.png.asset.json";
+import inseadLogo from "@/assets/cred-insead.png.asset.json";
+
+export const Route = createFileRoute("/organizations")({
+  head: () => ({
+    meta: [
+      { title: "Organizations — Leadership Pipeline & Advancement | Amna Imran" },
+      { name: "description", content: "Coaching, workshops, and consulting that strengthen leadership pipelines and advance high-potential women within complex organizations." },
+      { property: "og:title", content: "Organizations — Leadership Pipeline & Advancement" },
+      { property: "og:description", content: "Evidence-based coaching and consulting for HR, L&D, DEI, and talent leaders." },
+      { property: "og:url", content: "/organizations" },
+    ],
+    links: [{ rel: "canonical", href: "/organizations" }],
+  }),
+  component: Organizations,
+});
+
+const STATS = [
+  { n: "81", suffix: " / 100", l: "women promoted per 100 men at first step to manager", s: "McKinsey Women in the Workplace 2024" },
+  { n: "29%", suffix: "", l: "of C-suite roles globally held by women", s: "McKinsey Women in the Workplace 2025" },
+  { n: "50yr", suffix: "+", l: "to global gender parity at current pace", s: "McKinsey / LeanIn 2024" },
+];
+
+const NOT_WORKING = [
+  {
+    t: "Unconscious bias training",
+    d: "Broadly delivered, rarely translates into behaviour change. HBR research confirms: attitude shifts do not equal promotion shifts.",
+  },
+  {
+    t: "Awareness-led DEI programs",
+    d: "Good intentions without accountability structures, measurable targets, or ties to performance metrics. Intent without infrastructure.",
+  },
+  {
+    t: "Mentorship without sponsorship",
+    d: "Women get advice. Men get advocacy. Having a mentor does not replicate what active sponsorship delivers for career advancement.",
+  },
+  {
+    t: "Cutting what was working",
+    d: "Remote flexibility, formal sponsorship, targeted development — being scaled back precisely when retention of women and minorities depends on them.",
+  },
+];
+
+const MOVES_NEEDLE = [
+  {
+    t: "Behaviour-based training",
+    d: "Tied to specific decision moments — hiring panels, promotion reviews, feedback. Framed as an opportunity for managers, not a compliance exercise.",
+  },
+  {
+    t: "Embedded sponsorship",
+    d: "Not one-off initiatives — sponsorship woven into career development infrastructure and held accountable at leadership level over time.",
+  },
+  {
+    t: "De-biased promotion processes",
+    d: "McKinsey's top-performing companies share one trait: bias is addressed at the decision point — not in the training room weeks before.",
+  },
+  {
+    t: "Individual + systemic coaching",
+    d: "Equipping leaders to navigate complex structures while the organization simultaneously addresses those structures. Both levels, at once.",
+  },
+];
+
+const SOUND_FAMILIAR = [
+  "We have ERGs and training — but our senior pipeline is still male-dominated.",
+  "High-potential women are leaving before we can promote them.",
+  "We don't know if our DEI spend is actually doing anything.",
+];
+
+const OFFERINGS = [
+  {
+    key: "coaching",
+    tab: "1:1 Coaching",
+    badge: "Sponsored Leadership Coaching",
+    title: "ELEVATE Strategic Advancement Program",
+    tagline: "Six- or twelve-month coaching for high-potential women in succession pipelines.",
+    focus: ["Leadership presence", "Visibility & sponsorship", "Advancement positioning", "Influence & negotiation", "Sustainable performance"],
+    delivery: ["6 or 12-month programs", "ICF-credentialed coach", "360 assessment included", "Progress reporting for HR"],
+    bestFor: "Emerging and mid-senior leaders in succession or development pipelines.",
+  },
+  {
+    key: "workshops",
+    tab: "Workshops",
+    badge: "Workshops & Strategic Sessions",
+    title: "Leadership Workshops & Strategic Sessions",
+    tagline: "Custom in-person or virtual sessions for groups up to 40.",
+    focus: ["Sponsorship vs. mentorship", "Leadership double bind", "Evaluation bias", "Career transitions", "Sustainable ambition"],
+    delivery: ["Half or full-day format", "In-person or virtual", "Up to 40 participants", "Custom to your context"],
+    bestFor: "Women's networks, manager groups, leadership cohorts, HR and L&D teams.",
+  },
+  {
+    key: "strengths",
+    tab: "Strengths",
+    badge: "Gallup CliftonStrengths Certified",
+    title: "Strengths-Based Team Development",
+    tagline: "Compound what already makes teams exceptional.",
+    focus: ["Team collaboration", "Role alignment", "Leadership self-awareness", "Performance optimization"],
+    delivery: ["Individual assessments", "Team debrief session", "Manager coaching add-on", "Action planning included"],
+    bestFor: "New or restructured teams, high-performance units, leadership cohorts.",
+  },
+  {
+    key: "dei",
+    tab: "DEI Consultancy",
+    badge: "Structural Inclusion & Advancement",
+    title: "Structural Inclusion & Advancement Strategy",
+    tagline: "Move from awareness to structural, measurable change.",
+    focus: ["Promotion process audit", "Sponsorship access gaps", "Leadership criteria review", "Pipeline integrity", "Attrition risk mapping"],
+    delivery: ["Discovery & data review", "Findings report", "Strategic recommendations", "Implementation support"],
+    bestFor: "HR and DEI leads wanting to move from awareness to structural, measurable change.",
+  },
+];
+
+const RESEARCH_OUTCOMES = [
+  { n: "40%", l: "reduction in attrition after customized DEI programs", s: "McKinsey case data" },
+  { n: "30%", l: "increase in women in leadership roles", s: "McKinsey case data" },
+  { n: "5×", l: "more likely to retain talent in inclusive cultures", s: "HBR / Deloitte" },
+];
+
+const OUTCOMES = [
+  { n: "+", l: "Stronger mid-level leadership pipeline" },
+  { n: "↑", l: "Increased promotion readiness" },
+  { n: "↑", l: "Improved retention of high-potential women" },
+  { n: "↑", l: "Greater leadership confidence and visibility" },
+  { n: "↓", l: "Reduced burnout risk during critical career stages" },
+  { n: "=", l: "Clear alignment between individual growth and business objectives" },
+];
+
+const PARTNER_CRITERIA = [
+  "Recognize the importance of strengthening progression, not just recruitment",
+  "Invest in structured leadership development",
+  "Seek measurable advancement impact",
+  "Value evidence-based approaches over symbolic initiatives",
+  "Support confidentiality while maintaining accountability",
+];
+
+const CREDENTIAL_LOGOS = [
+  { logo: icfLogo.url, label: "ICF ACC Certified" },
+  { logo: gallupLogo.url, label: "Gallup Certified CliftonStrengths Coach" },
+  { logo: cdpLogo.url, label: "Certified Diversity Professional (CDP®)" },
+  { logo: inseadLogo.url, label: "Gender Specialist trained at INSEAD" },
+];
+
+function DiagnosisAccordion({
+  items,
+  badge,
+  badgeTone,
+}: {
+  items: { t: string; d: string }[];
+  badge: string;
+  badgeTone: "low" | "high";
+}) {
+  const badgeClass =
+    badgeTone === "low"
+      ? "bg-[#efd9d6] text-[#8a4a3f]"
+      : "bg-[#d8e3d1] text-[#4a6b3d]";
+  return (
+    <Accordion type="single" collapsible defaultValue="item-0" className="mt-10 flex flex-col gap-3">
+      {items.map((item, i) => (
+        <AccordionItem
+          key={item.t}
+          value={`item-${i}`}
+          className="border-0 bg-background border border-[var(--hairline)] data-[state=open]:border-l-2 data-[state=open]:border-l-[var(--gold)] data-[state=open]:bg-[var(--cream)]/40 transition-colors"
+        >
+          <AccordionTrigger className="px-6 py-5 hover:no-underline [&>svg]:hidden group">
+            <div className="flex items-center gap-5 flex-1 text-left">
+              <span className={`inline-flex shrink-0 items-center px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] font-medium ${badgeClass}`}>
+                {badge}
+              </span>
+              <span className="font-serif text-[18px] md:text-[20px] text-foreground leading-tight">
+                {item.t}
+              </span>
+            </div>
+            <span aria-hidden className="ml-4 text-foreground/40 text-xl font-light group-data-[state=open]:text-[var(--gold)] transition-colors">
+              <span className="group-data-[state=open]:hidden">+</span>
+              <span className="hidden group-data-[state=open]:inline">×</span>
+            </span>
+          </AccordionTrigger>
+          <AccordionContent className="px-6 pb-6 pt-0">
+            <div className="border-t border-[var(--hairline)]/70 pt-4">
+              <p className="text-[14.5px] md:text-[15px] text-foreground/75 leading-relaxed max-w-3xl">{item.d}</p>
+            </div>
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  );
+}
+
+function Organizations() {
+  const [diagnose, setDiagnose] = useState<"not" | "moves">("not");
+  return (
+    <>
+      {/* HERO */}
+      <section className="py-20 md:py-28">
+        <Container>
+          <div className="max-w-4xl">
+            <Reveal><Eyebrow>For Organizations</Eyebrow></Reveal>
+            <Reveal delay={80}>
+              <h1 className="mt-7 font-serif text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[4.4rem] leading-[1.02] text-foreground">
+                The investment is real.<br />
+                <em className="text-[var(--gold)] not-italic font-light">The returns have not been.</em>
+              </h1>
+            </Reveal>
+            <Reveal delay={160}>
+              <p className="mt-8 max-w-2xl text-[17px] text-foreground/80 leading-relaxed font-light">
+                A decade of DEI programs. The pipeline is still broken. Here is what the research says
+                about why — and what actually changes things.
+              </p>
+            </Reveal>
+            <Reveal delay={220}>
+              <div className="mt-10">
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-foreground text-background px-7 py-4 text-[11px] uppercase tracking-[0.22em] hover:bg-foreground/90 transition-colors">
+                  Schedule an Organizational Consultation <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* STATS ROW */}
+      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-14 md:py-20">
+        <Container>
+          <div className="grid gap-px bg-[var(--hairline)] border border-[var(--hairline)] md:grid-cols-3">
+            {STATS.map((s, i) => (
+              <Reveal key={s.l} delay={i * 80} as="div" className="bg-background p-8 md:p-10 text-center">
+                <div className="font-serif text-[3rem] md:text-[4rem] text-[var(--gold)] leading-none">
+                  {s.n}<span className="text-foreground/40 text-[1.5rem] md:text-[2rem]">{s.suffix}</span>
+                </div>
+                <p className="mt-5 text-[14px] md:text-[15px] text-foreground/80 leading-relaxed max-w-xs mx-auto">{s.l}</p>
+                <p className="mt-3 text-[11px] text-foreground/45">{s.s}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* DIAGNOSIS — toggle + accordion */}
+      <section className="py-20 md:py-28">
+        <Container>
+          <Reveal>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
+              The diagnostic is clear — the{" "}
+              <em className="text-[var(--gold)] not-italic font-light">prescriptions have not been.</em>
+            </h2>
+          </Reveal>
+
+          <div className="mt-12 inline-flex border border-[var(--hairline)] w-full md:w-auto">
+            <button
+              onClick={() => setDiagnose("not")}
+              className={`flex-1 md:flex-none px-6 py-3 text-[11px] uppercase tracking-[0.22em] transition-colors ${diagnose === "not" ? "bg-foreground text-background" : "bg-background text-foreground/70 hover:text-foreground"}`}
+            >
+              What isn't working
+            </button>
+            <button
+              onClick={() => setDiagnose("moves")}
+              className={`flex-1 md:flex-none px-6 py-3 text-[11px] uppercase tracking-[0.22em] border-l border-[var(--hairline)] transition-colors ${diagnose === "moves" ? "bg-foreground text-background" : "bg-background text-foreground/70 hover:text-foreground"}`}
+            >
+              What moves the needle
+            </button>
+          </div>
+
+          {diagnose === "not" ? (
+            <DiagnosisAccordion items={NOT_WORKING} badge="Low Yield" badgeTone="low" />
+          ) : (
+            <DiagnosisAccordion items={MOVES_NEEDLE} badge="High Impact" badgeTone="high" />
+          )}
+        </Container>
+      </section>
+
+      {/* CORPORATE OFFERINGS — Sounds Familiar + The Engagements */}
+      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
+        <Container>
+          {/* Sounds Familiar — editorial subtitle */}
+          <Reveal>
+            <div className="text-center">
+              <h3 className="mt-4 font-serif italic text-3xl md:text-4xl text-[var(--gold)] font-light">
+                Sounds familiar?
+              </h3>
+              <div className="mx-auto mt-5 h-px w-16 bg-[var(--gold)]/60" />
+            </div>
+          </Reveal>
+
+          {/* Editorial quote trio — staggered, no boxes */}
+          <div className="mt-14 grid gap-10 md:gap-6 md:grid-cols-3">
+            {SOUND_FAMILIAR.map((q, i) => (
+              <Reveal
+                key={q}
+                delay={i * 80}
+                as="div"
+                className={`group pl-6 border-l border-[var(--gold)]/60 hover:border-[var(--gold)] hover:-translate-y-1 transition-all duration-500 ${
+                  i === 1 ? "md:mt-14" : i === 2 ? "md:mt-7" : ""
+                }`}
+              >
+                <div className="font-serif text-[var(--gold)] text-6xl leading-none -mt-2 mb-2 select-none">
+                  &ldquo;
+                </div>
+                <p className="font-serif italic text-[17px] md:text-[18px] text-foreground/85 leading-relaxed">
+                  {q}
+                </p>
+                <div className="mt-5 flex items-center gap-3 text-[10px] uppercase tracking-[0.22em] text-foreground/45">
+                  <span className="h-px w-6 bg-foreground/25" />
+                  From conversations with HR leaders
+                </div>
+              </Reveal>
+            ))}
+          </div>
+
+          {/* The Engagements — title block */}
+          <Reveal>
+            <div className="mt-24 md:mt-32">
+              <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
+                The engagements<em className="text-[var(--gold)] not-italic font-light">.</em>
+              </h2>
+              <p className="mt-7 max-w-2xl text-[16px] text-foreground/75 leading-relaxed font-light">
+                Four ways to move from intention to measurable outcome. Designed for HR, L&amp;D,
+                and leadership teams ready to go beyond programs — into structural change that
+                actually retains and advances talent.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <Tabs defaultValue="coaching" className="mt-12 w-full">
+              <TabsList className="flex flex-wrap h-auto p-0 bg-transparent gap-0 border border-[var(--hairline)] rounded-none w-full">
+                {OFFERINGS.map((o) => (
+                  <TabsTrigger
+                    key={o.key}
+                    value={o.key}
+                    className="flex-1 min-w-[140px] rounded-none py-3 px-3 text-[11px] uppercase tracking-[0.18em] font-medium bg-background text-foreground/70 border-r border-[var(--hairline)] last:border-r-0 data-[state=active]:bg-foreground data-[state=active]:text-background data-[state=active]:shadow-none"
+                  >
+                    {o.tab}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+              {OFFERINGS.map((o) => (
+                <TabsContent key={o.key} value={o.key} className="mt-0 border border-t-0 border-[var(--hairline)] bg-background">
+                  <div className="p-8 md:p-12">
+                    <div>
+                      <div className="eyebrow text-[var(--gold)]">{o.badge}</div>
+                      <h3 className="mt-4 font-serif text-3xl md:text-[2.2rem] leading-tight text-foreground">{o.title}</h3>
+                      <p className="mt-3 font-serif italic text-[var(--gold)] text-[15px]">{o.tagline}</p>
+                    </div>
+                    <Hairline className="my-8" />
+                    <div className="grid gap-8 md:grid-cols-2">
+                      <div>
+                        <div className="eyebrow text-[var(--gold)]">Focus areas</div>
+                        <ul className="mt-4 space-y-2">
+                          {o.focus.map((f) => (
+                            <li key={f} className="flex items-baseline gap-3 text-[14px] text-foreground/80 border-b border-[var(--hairline)]/60 py-1.5">
+                              <span aria-hidden className="text-[var(--gold)] text-[10px]">◆</span>
+                              {f}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <div className="eyebrow text-[var(--gold)]">Delivery</div>
+                        <ul className="mt-4 space-y-2">
+                          {o.delivery.map((d) => (
+                            <li key={d} className="flex items-baseline gap-3 text-[14px] text-foreground/80 border-b border-[var(--hairline)]/60 py-1.5">
+                              <span aria-hidden className="text-[var(--gold)] text-[10px]">◆</span>
+                              {d}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <Hairline className="my-8" />
+                    <div>
+                      <div className="eyebrow text-foreground/55">Best for</div>
+                      <p className="mt-3 text-[15px] text-foreground/80 leading-relaxed max-w-2xl">{o.bestFor}</p>
+                    </div>
+                  </div>
+                </TabsContent>
+              ))}
+            </Tabs>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* WHAT THE RESEARCH SAYS — dark stat band */}
+      <section className="bg-foreground text-background py-20 md:py-28">
+        <Container>
+          <Reveal>
+            <div className="eyebrow text-[var(--gold)]">What the research says happens when this works</div>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {RESEARCH_OUTCOMES.map((r, i) => (
+              <Reveal
+                key={r.l}
+                delay={i * 80}
+                as="div"
+                className="border border-background/15 p-10 text-center min-h-[260px] flex flex-col items-center justify-center"
+              >
+                <div className="font-serif text-[4rem] md:text-[5rem] text-[var(--gold)] leading-none">{r.n}</div>
+                <p className="mt-6 text-[15px] md:text-[16px] text-background/85 leading-relaxed max-w-[260px]">{r.l}</p>
+                <p className="mt-5 font-serif italic text-[13px] text-background/55">{r.s}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* OUTCOMES — editorial list */}
+      <section className="py-20 md:py-28">
+        <Container>
+          <Reveal>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
+              What partners typically{" "}
+              <em className="text-[var(--gold)] not-italic font-light">achieve.</em>
+            </h2>
+          </Reveal>
+          <div className="mt-14 max-w-4xl border-t border-[var(--hairline)]">
+            {OUTCOMES.map((o, i) => (
+              <Reveal
+                key={o.l}
+                delay={i * 40}
+                as="div"
+                className="group flex items-center gap-6 md:gap-10 py-6 md:py-7 border-b border-[var(--hairline)] hover:pl-3 transition-[padding] duration-500"
+              >
+                <div className="w-14 md:w-16 shrink-0 font-serif text-[2.5rem] md:text-[3rem] text-[var(--gold)] leading-none text-center">
+                  {o.n}
+                </div>
+                <p className="font-serif text-[19px] md:text-[22px] text-foreground leading-snug">{o.l}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ORGANIZATIONS SERIOUS ABOUT PROGRESSION */}
+      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
+        <Container>
+          <div className="grid gap-12 md:gap-16 md:grid-cols-2 items-start">
+            <Reveal>
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.05] text-foreground">
+                Organizations serious about{" "}
+                <em className="text-[var(--gold)] not-italic font-light">progression.</em>
+              </h2>
+              <p className="mt-7 max-w-md text-[16px] text-foreground/75 leading-relaxed font-light">
+                If your organization is committed to strengthening its leadership pipeline through
+                strategic, evidence-based coaching and consulting, I welcome a conversation.
+              </p>
+              <div className="mt-10">
+                <Link to="/contact" className="inline-flex items-center gap-2 bg-foreground text-background px-7 py-4 text-[11px] uppercase tracking-[0.22em] hover:bg-foreground/90 transition-colors">
+                  Schedule an Organizational Consultation <span aria-hidden>→</span>
+                </Link>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="border border-[var(--hairline)] bg-background p-8 md:p-10">
+                <div className="eyebrow text-foreground/55">We partner with organizations that:</div>
+                <Hairline className="mt-5" />
+                <ul className="mt-6 space-y-5">
+                  {PARTNER_CRITERIA.map((c, i) => (
+                    <li key={c} className="flex items-baseline gap-5">
+                      <span className="font-serif italic text-[var(--gold)] text-xl md:text-2xl w-10 shrink-0">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="text-[15px] text-foreground/80 leading-relaxed">{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* TRAINING BEHIND METHODOLOGY */}
+      <section className="py-20 md:py-28">
+        <Container>
+          <Reveal>
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
+              The training behind the{" "}
+              <em className="text-[var(--gold)] not-italic font-light">methodology.</em>
+            </h2>
+          </Reveal>
+          <div className="mt-12 grid gap-6 md:grid-cols-4">
+            {CREDENTIAL_LOGOS.map((c, i) => (
+              <Reveal key={c.label} delay={i * 60} as="article" className="bg-background border border-[var(--hairline)] p-7 min-h-[200px] flex flex-col items-center text-center gap-5">
+                <div className="flex-1 flex items-center justify-center w-full h-20 md:h-24">
+                  <img
+                    src={c.logo}
+                    alt={c.label}
+                    loading="lazy"
+                    className="object-contain h-full w-auto max-w-[220px]"
+                  />
+                </div>
+                <Hairline className="w-full" />
+                <p className="text-[13px] md:text-[14px] text-foreground/75 leading-snug">{c.label}</p>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="bg-foreground text-background">
+        <Container className="py-20 md:py-28">
+          <div className="max-w-3xl">
+            <div className="eyebrow text-[var(--gold)]">Begin</div>
+            <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-background">
+              Strengthen the pipeline. Support the leaders{" "}
+              <em className="text-[var(--gold)] not-italic font-light">already within it.</em>
+            </h2>
+            <p className="mt-8 max-w-xl text-[16px] text-background/70 leading-relaxed font-light">
+              If your organization is committed to developing and retaining high-potential women,
+              the next step is a strategic conversation.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link to="/contact" className="inline-flex items-center gap-2 bg-background text-foreground px-7 py-4 text-[11px] uppercase tracking-[0.22em] hover:bg-[var(--cream)] transition-colors">
+                Schedule an Organizational Consultation <span aria-hidden>→</span>
+              </Link>
+              <Link to="/work-with-me" className="inline-flex items-center gap-2 border border-background/50 px-7 py-4 text-[11px] uppercase tracking-[0.22em] text-background hover:bg-background hover:text-foreground transition-colors">
+                Explore Individual Coaching <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </div>
+        </Container>
+      </section>
+    </>
+  );
+}
