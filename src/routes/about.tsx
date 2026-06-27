@@ -1,13 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { Container, Eyebrow, Reveal } from "@/components/site/primitives";
-import heroPortrait from "@/assets/amna-about-hero.png.asset.json";
-import realizationPortrait from "@/assets/amna-full-portrait.png.asset.json";
+import heroPortrait from "@/assets/amna-about-hero.png";
+import realizationPortrait from "@/assets/amna-full-portrait.png";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Amna Imran" },
+      { title: "Meet Amna Imran | Leadership Coach & Gender Strategy Expert" },
       { name: "description", content: "Executive coaching at the intersection of individual capability and organizational reality — evidence-based, systems-aware, advancement-focused." },
       { property: "og:title", content: "About — Amna Imran" },
       { property: "og:description", content: "The philosophy, credentials, and lived experience behind the practice." },
@@ -115,7 +115,7 @@ function About() {
                 <div className="border border-[var(--hairline)]/70 pt-3 md:pt-4 px-3 md:px-4 pb-0 bg-[var(--cream)]/30 inline-block w-full">
                   <div className="relative overflow-hidden aspect-[4/5]">
                     <img
-                      src={heroPortrait.url}
+                      src={heroPortrait}
                       alt="Amna Imran portrait"
                       className="absolute inset-0 h-full w-full object-cover object-bottom"
                       style={{ transform: 'scale(1.1)', transformOrigin: 'bottom center' }}
@@ -184,7 +184,7 @@ function About() {
                 <figure className="mt-6 md:mt-8">
                   <div className="overflow-hidden border border-[var(--hairline)]/70 bg-[var(--cream)]/40 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.25)]">
                     <img
-                      src={realizationPortrait.url}
+                      src={realizationPortrait}
                       alt="Amna Imran"
                       className="block h-auto w-full scale-[2] translate-x-[-32px]"
                     />

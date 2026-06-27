@@ -8,15 +8,15 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import icfLogo from "@/assets/cred-icf.png.asset.json";
-import gallupLogo from "@/assets/cred-gallup.png.asset.json";
-import cdpLogo from "@/assets/cred-cdp.png.asset.json";
-import inseadLogo from "@/assets/cred-insead.png.asset.json";
+import icfLogo from "@/assets/icf-acc.png";
+import gallupLogo from "@/assets/gallup-strengths.png";
+import cdpLogo from "@/assets/cdp.png";
+import inseadLogo from "@/assets/insead.png";
 
 export const Route = createFileRoute("/organizations")({
   head: () => ({
     meta: [
-      { title: "Organizations — Leadership Pipeline & Advancement | Amna Imran" },
+      { title: "For Organizations | Advance & Retain High-Potential Women Leaders" },
       { name: "description", content: "Coaching, workshops, and consulting that strengthen leadership pipelines and advance high-potential women within complex organizations." },
       { property: "og:title", content: "Organizations — Leadership Pipeline & Advancement" },
       { property: "og:description", content: "Evidence-based coaching and consulting for HR, L&D, DEI, and talent leaders." },
@@ -144,10 +144,10 @@ const PARTNER_CRITERIA = [
 ];
 
 const CREDENTIAL_LOGOS = [
-  { logo: icfLogo.url, label: "ICF ACC Certified" },
-  { logo: gallupLogo.url, label: "Gallup Certified CliftonStrengths Coach" },
-  { logo: cdpLogo.url, label: "Certified Diversity Professional (CDP®)" },
-  { logo: inseadLogo.url, label: "Gender Specialist trained at INSEAD" },
+  { logo: icfLogo, label: "ICF ACC Certified", scale: 1.76 },
+  { logo: gallupLogo, label: "Gallup Certified CliftonStrengths Coach", scale: 1.5 },
+  { logo: cdpLogo, label: "Certified Diversity Professional (CDP®)", scale: 1.62 },
+  { logo: inseadLogo, label: "Gender Specialist trained at INSEAD", scale: 1.53 },
 ];
 
 function DiagnosisAccordion({
@@ -201,8 +201,22 @@ function Organizations() {
   return (
     <>
       {/* HERO */}
-      <section className="py-20 md:py-28">
+      <section className="bg-background py-20 md:py-28">
         <Container>
+          <Reveal className="hidden">
+            <div className="max-w-4xl">
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-foreground">
+                Four ways to move from{" "}
+                <em className="text-[var(--gold)] not-italic font-light">
+                  intention to measurable outcome.
+                </em>
+              </h2>
+              <p className="mt-6 max-w-4xl text-[18px] md:text-[21px] text-foreground/80 leading-relaxed font-light">
+                Designed for HR, L&amp;D, and leadership teams ready to go beyond programs — into
+                structural change that actually retains and advances talent.
+              </p>
+            </div>
+          </Reveal>
           <div className="max-w-4xl">
             <Reveal><Eyebrow>For Organizations</Eyebrow></Reveal>
             <Reveal delay={80}>
@@ -217,6 +231,17 @@ function Organizations() {
                 about why — and what actually changes things.
               </p>
             </Reveal>
+            <div className="mt-12 grid gap-px bg-[var(--hairline)] border border-[var(--hairline)] md:grid-cols-3">
+              {STATS.map((s, i) => (
+                <Reveal key={s.l} delay={i * 80} as="div" className="bg-background p-8 md:p-10 text-center">
+                  <div className="font-serif text-[3rem] md:text-[4rem] text-[var(--gold)] leading-none">
+                    {s.n}<span className="text-foreground/40 text-[1.5rem] md:text-[2rem]">{s.suffix}</span>
+                  </div>
+                  <p className="mt-5 text-[14px] md:text-[15px] text-foreground/80 leading-relaxed max-w-xs mx-auto">{s.l}</p>
+                  <p className="mt-3 text-[11px] text-foreground/45">{s.s}</p>
+                </Reveal>
+              ))}
+            </div>
             <Reveal delay={220}>
               <div className="mt-10">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-foreground text-background px-7 py-4 text-[11px] uppercase tracking-[0.22em] hover:bg-foreground/90 transition-colors">
@@ -228,25 +253,8 @@ function Organizations() {
         </Container>
       </section>
 
-      {/* STATS ROW */}
-      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-14 md:py-20">
-        <Container>
-          <div className="grid gap-px bg-[var(--hairline)] border border-[var(--hairline)] md:grid-cols-3">
-            {STATS.map((s, i) => (
-              <Reveal key={s.l} delay={i * 80} as="div" className="bg-background p-8 md:p-10 text-center">
-                <div className="font-serif text-[3rem] md:text-[4rem] text-[var(--gold)] leading-none">
-                  {s.n}<span className="text-foreground/40 text-[1.5rem] md:text-[2rem]">{s.suffix}</span>
-                </div>
-                <p className="mt-5 text-[14px] md:text-[15px] text-foreground/80 leading-relaxed max-w-xs mx-auto">{s.l}</p>
-                <p className="mt-3 text-[11px] text-foreground/45">{s.s}</p>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       {/* DIAGNOSIS — toggle + accordion */}
-      <section className="py-20 md:py-28">
+      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
         <Container>
           <Reveal>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
@@ -279,11 +287,25 @@ function Organizations() {
       </section>
 
       {/* CORPORATE OFFERINGS — Sounds Familiar + The Engagements */}
-      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
+      <section className="bg-background py-20 md:py-28">
         <Container>
+          <Reveal>
+            <div className="max-w-4xl">
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-foreground">
+                Four ways to move from{" "}
+                <em className="text-[var(--gold)] not-italic font-light">
+                  intention to measurable outcome.
+                </em>
+              </h2>
+              <p className="mt-6 max-w-4xl text-[18px] md:text-[21px] text-foreground/80 leading-relaxed font-light">
+                Designed for HR, L&amp;D, and leadership teams ready to go beyond programs &mdash; into
+                structural change that actually retains and advances talent.
+              </p>
+            </div>
+          </Reveal>
           {/* Sounds Familiar — editorial subtitle */}
           <Reveal>
-            <div className="text-center">
+            <div className="mt-20 text-center">
               <h3 className="mt-4 font-serif italic text-3xl md:text-4xl text-[var(--gold)] font-light">
                 Sounds familiar?
               </h3>
@@ -317,8 +339,28 @@ function Organizations() {
           </div>
 
           {/* The Engagements — title block */}
+        </Container>
+      </section>
+
+      {/* CORPORATE ENGAGEMENTS */}
+      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
+        <Container>
+          <Reveal className="hidden">
+            <div className="max-w-4xl">
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-foreground">
+                Four ways to move from{" "}
+                <em className="text-[var(--gold)] not-italic font-light">
+                  intention to measurable outcome.
+                </em>
+              </h2>
+              <p className="mt-6 max-w-4xl text-[18px] md:text-[21px] text-foreground/80 leading-relaxed font-light">
+                Designed for HR, L&amp;D, and leadership teams ready to go beyond programs — into
+                structural change that actually retains and advances talent.
+              </p>
+            </div>
+          </Reveal>
           <Reveal>
-            <div className="mt-24 md:mt-32">
+            <div className="hidden">
               <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
                 The engagements<em className="text-[var(--gold)] not-italic font-light">.</em>
               </h2>
@@ -331,7 +373,7 @@ function Organizations() {
           </Reveal>
 
           <Reveal>
-            <Tabs defaultValue="coaching" className="mt-12 w-full">
+            <Tabs defaultValue="coaching" className="w-full">
               <TabsList className="flex flex-wrap h-auto p-0 bg-transparent gap-0 border border-[var(--hairline)] rounded-none w-full">
                 {OFFERINGS.map((o) => (
                   <TabsTrigger
@@ -389,8 +431,8 @@ function Organizations() {
         </Container>
       </section>
 
-      {/* WHAT THE RESEARCH SAYS — dark stat band */}
-      <section className="bg-foreground text-background py-20 md:py-28">
+      {/* WHAT THE RESEARCH SAYS */}
+      <section className="bg-background py-20 md:py-28">
         <Container>
           <Reveal>
             <div className="eyebrow text-[var(--gold)]">What the research says happens when this works</div>
@@ -401,11 +443,11 @@ function Organizations() {
                 key={r.l}
                 delay={i * 80}
                 as="div"
-                className="border border-background/15 p-10 text-center min-h-[260px] flex flex-col items-center justify-center"
+                className="border border-[var(--hairline)] p-10 text-center min-h-[260px] flex flex-col items-center justify-center"
               >
                 <div className="font-serif text-[4rem] md:text-[5rem] text-[var(--gold)] leading-none">{r.n}</div>
-                <p className="mt-6 text-[15px] md:text-[16px] text-background/85 leading-relaxed max-w-[260px]">{r.l}</p>
-                <p className="mt-5 font-serif italic text-[13px] text-background/55">{r.s}</p>
+                <p className="mt-6 text-[15px] md:text-[16px] text-foreground/80 leading-relaxed max-w-[260px]">{r.l}</p>
+                <p className="mt-5 font-serif italic text-[13px] text-foreground/50">{r.s}</p>
               </Reveal>
             ))}
           </div>
@@ -413,7 +455,7 @@ function Organizations() {
       </section>
 
       {/* OUTCOMES — editorial list */}
-      <section className="py-20 md:py-28">
+      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
         <Container>
           <Reveal>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
@@ -440,7 +482,7 @@ function Organizations() {
       </section>
 
       {/* ORGANIZATIONS SERIOUS ABOUT PROGRESSION */}
-      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
+      <section className="bg-background py-20 md:py-28">
         <Container>
           <div className="grid gap-12 md:gap-16 md:grid-cols-2 items-start">
             <Reveal>
@@ -449,10 +491,14 @@ function Organizations() {
                 <em className="text-[var(--gold)] not-italic font-light">progression.</em>
               </h2>
               <p className="mt-7 max-w-md text-[16px] text-foreground/75 leading-relaxed font-light">
+                Leadership equity is not achieved through intention alone. It requires deliberate
+                development, structured support, and informed navigation of organizational realities.
+              </p>
+              <p className="mt-5 max-w-md text-[16px] text-foreground/75 leading-relaxed font-light">
                 If your organization is committed to strengthening its leadership pipeline through
                 strategic, evidence-based coaching and consulting, I welcome a conversation.
               </p>
-              <div className="mt-10">
+              <div className="hidden">
                 <Link to="/contact" className="inline-flex items-center gap-2 bg-foreground text-background px-7 py-4 text-[11px] uppercase tracking-[0.22em] hover:bg-foreground/90 transition-colors">
                   Schedule an Organizational Consultation <span aria-hidden>→</span>
                 </Link>
@@ -479,7 +525,7 @@ function Organizations() {
       </section>
 
       {/* TRAINING BEHIND METHODOLOGY */}
-      <section className="py-20 md:py-28">
+      <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
         <Container>
           <Reveal>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
@@ -489,17 +535,17 @@ function Organizations() {
           </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-4">
             {CREDENTIAL_LOGOS.map((c, i) => (
-              <Reveal key={c.label} delay={i * 60} as="article" className="bg-background border border-[var(--hairline)] p-7 min-h-[200px] flex flex-col items-center text-center gap-5">
-                <div className="flex-1 flex items-center justify-center w-full h-20 md:h-24">
+              <Reveal key={c.label} delay={i * 60} as="article" className="bg-background border border-[var(--hairline)] p-7 min-h-[220px] flex flex-col items-center justify-start text-center">
+                <div className="flex items-center justify-center w-full h-28 md:h-32">
                   <img
                     src={c.logo}
                     alt={c.label}
                     loading="lazy"
-                    className="object-contain h-full w-auto max-w-[220px]"
+                    className="object-contain h-16 md:h-20 w-auto max-w-[280px]"
+                    style={{ transform: `scale(${c.scale})`, transformOrigin: "center" }}
                   />
                 </div>
-                <Hairline className="w-full" />
-                <p className="text-[13px] md:text-[14px] text-foreground/75 leading-snug">{c.label}</p>
+                <p className="mt-6 min-h-[2.75rem] flex items-start justify-center text-[13px] md:text-[14px] text-foreground/75 leading-snug">{c.label}</p>
               </Reveal>
             ))}
           </div>
@@ -508,22 +554,24 @@ function Organizations() {
 
       {/* FINAL CTA */}
       <section className="bg-foreground text-background">
-        <Container className="py-20 md:py-28">
-          <div className="max-w-3xl">
+        <Container className="py-12 md:py-16">
+          <div className="grid gap-10 md:grid-cols-12 items-end">
+            <div className="md:col-span-8">
             <div className="eyebrow text-[var(--gold)]">Begin</div>
-            <h2 className="mt-6 font-serif text-4xl md:text-6xl leading-[1.05] text-background">
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.6rem] leading-[1.05] text-background">
               Strengthen the pipeline. Support the leaders{" "}
               <em className="text-[var(--gold)] not-italic font-light">already within it.</em>
             </h2>
-            <p className="mt-8 max-w-xl text-[16px] text-background/70 leading-relaxed font-light">
-              If your organization is committed to developing and retaining high-potential women,
-              the next step is a strategic conversation.
+            <p className="mt-8 max-w-2xl text-[16px] text-background/70 leading-relaxed font-light">
+              A confidential discussion to explore your leadership goals, current challenges, and
+              how structured advancement coaching could support your talent strategy.
             </p>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <Link to="/contact" className="inline-flex items-center gap-2 bg-background text-foreground px-7 py-4 text-[11px] uppercase tracking-[0.22em] hover:bg-[var(--cream)] transition-colors">
+            </div>
+            <div className="md:col-span-4 flex flex-col gap-4">
+              <Link to="/contact" className="inline-flex items-center justify-between gap-2 bg-background text-foreground px-7 py-4 text-[11px] uppercase tracking-[0.22em] hover:bg-[var(--cream)] transition-colors">
                 Schedule an Organizational Consultation <span aria-hidden>→</span>
               </Link>
-              <Link to="/work-with-me" className="inline-flex items-center gap-2 border border-background/50 px-7 py-4 text-[11px] uppercase tracking-[0.22em] text-background hover:bg-background hover:text-foreground transition-colors">
+              <Link to="/work-with-me" className="inline-flex items-center justify-between gap-2 border border-background/50 px-7 py-4 text-[11px] uppercase tracking-[0.22em] text-background hover:bg-background hover:text-foreground transition-colors">
                 Explore Individual Coaching <span aria-hidden>→</span>
               </Link>
             </div>

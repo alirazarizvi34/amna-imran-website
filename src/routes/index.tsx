@@ -9,20 +9,20 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import heroPortrait from "@/assets/amna-hero-cutout.png";
-import supportPortrait from "@/assets/amna-support.png.asset.json";
-import approachPortrait from "@/assets/amna-approach.png.asset.json";
-import founderPortrait from "@/assets/amna-founder.png.asset.json";
-import icfLogo from "@/assets/cred-icf.png.asset.json";
-import gallupLogo from "@/assets/cred-gallup.png.asset.json";
-import cdpLogo from "@/assets/cred-cdp.png.asset.json";
-import inseadLogo from "@/assets/cred-insead.png.asset.json";
+import supportPortrait from "@/assets/amna-support.png";
+import approachPortrait from "@/assets/amna-approach.png";
+import founderPortrait from "@/assets/amna-founder.png";
+import icfLogo from "@/assets/icf-acc.png";
+import gallupLogo from "@/assets/gallup-strengths.png";
+import cdpLogo from "@/assets/cdp.png";
+import inseadLogo from "@/assets/insead.png";
 
 const GOLD = "#B89A6A";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Amna Imran — Strategic Leadership Coaching for High-Potential Women" },
+      { title: "Amna Imran | Strategic Leadership Coach for High-Potential Women" },
       {
         name: "description",
         content:
@@ -94,6 +94,16 @@ const FORWARD = [
   { t: "Sustaining ambition without burnout" },
 ];
 
+const SUPPORT_FOCUS = [
+  "Gain clarity on leadership direction",
+  "Build executive presence grounded in competence",
+  "Increase influence and visibility",
+  "Develop strong sponsor and stakeholder relationships",
+  "Prepare strategically for promotion or expanded roles",
+  "Navigate major career transitions, including parenthood",
+  "Create sustainable success on their own terms",
+];
+
 const PILLARS = [
   {
     t: "Leadership Coaching",
@@ -149,6 +159,7 @@ function HomePage() {
       <HowISupportSection />
       <WhyDifferentSection />
       <TwoPathwaysSection />
+      <CredibilitySection />
       <FounderSection />
       <FinalCTA />
     </>
@@ -221,10 +232,10 @@ function Hero() {
 
 function CredentialsStrip() {
   const items = [
-    { logo: icfLogo.url, label: "ICF ACC Certified", scale: 1.35 },
-    { logo: gallupLogo.url, label: "Gallup Certified CliftonStrengths Coach", scale: 1 },
-    { logo: cdpLogo.url, label: "Certified Diversity Professional", scale: 1 },
-    { logo: inseadLogo.url, label: "INSEAD-trained Gender Specialist", scale: 1 },
+    { logo: icfLogo, label: "ICF ACC Certified", scale: 1.76 },
+    { logo: gallupLogo, label: "Gallup Certified CliftonStrengths Coach", scale: 1.5 },
+    { logo: cdpLogo, label: "Certified Diversity Professional (CDP®)", scale: 1.62 },
+    { logo: inseadLogo, label: "INSEAD-trained Gender Specialist", scale: 1.53 },
   ];
   return (
     <section className="relative z-30 border-y border-[var(--hairline)]/70 bg-[var(--cream)]/70">
@@ -233,14 +244,14 @@ function CredentialsStrip() {
           {items.map((c) => (
             <li
               key={c.label}
-              className="py-8 md:py-9 px-5 flex flex-col items-center justify-center text-center gap-3"
+              className="py-6 px-5 flex flex-col items-center text-center gap-3"
             >
               <div className="h-16 md:h-20 flex items-center justify-center">
                 <img
                   src={c.logo}
                   alt={c.label}
                   loading="lazy"
-                  className="object-contain h-full w-auto max-w-[200px]"
+                  className="object-contain h-14 md:h-16 w-auto max-w-[260px]"
                   style={{ transform: `scale(${c.scale})`, transformOrigin: "center" }}
                 />
               </div>
@@ -335,6 +346,13 @@ function HighPerformanceSection() {
               <p className="relative mt-4 text-[15px] text-foreground/85 leading-relaxed max-w-xl">
                 Without visibility into these patterns, stalled progress can feel personal rather
                 than systemic — leading many capable professionals to work harder while seeing
+                diminishing returns.
+              </p>
+            </Reveal>
+            <Reveal delay={240}>
+              <p className="relative mt-4 text-[15px] text-foreground/85 leading-relaxed max-w-xl">
+                When these dynamics are unclear, stalled progress can feel personal rather than
+                systemic - leading many capable professionals to work harder while seeing
                 diminishing returns.
               </p>
             </Reveal>
@@ -625,6 +643,9 @@ function WayForwardSection() {
             about recognizing that career progression occurs within complex systems — and that
             success requires both individual excellence and strategic navigation.
           </p>
+          <p className="mt-5 max-w-2xl text-[15px] md:text-[16px] text-foreground/85 leading-relaxed font-light">
+            Advancement at senior levels depends on more than performance. It requires:
+          </p>
         </Reveal>
 
         <div className="mt-16 grid gap-10 md:grid-cols-12 md:gap-14 items-start">
@@ -731,8 +752,38 @@ function HowISupportSection() {
           </h2>
         </Reveal>
 
+        <Reveal delay={80}>
+          <div className="mt-8 md:mt-10 max-w-5xl">
+            <p className="max-w-3xl text-[16px] md:text-[18px] leading-relaxed text-foreground/80 font-light">
+              I work with ambitious professionals who want their impact, influence, and career
+              trajectory to reflect their true capability — without stepping away from roles they
+              have invested years building.
+            </p>
+            <p className="mt-5 max-w-4xl font-serif text-[1.35rem] md:text-[1.8rem] leading-snug text-foreground">
+              My approach integrates coaching with{" "}
+              <em className="not-italic font-light" style={{ color: GOLD }}>
+                evidence-based gender insight, strengths science,
+              </em>{" "}
+              and deep understanding of organizational dynamics to help clients:
+            </p>
+            <div className="mt-8 flex flex-wrap gap-x-3 gap-y-3">
+              {SUPPORT_FOCUS.map((item, i) => (
+                <span
+                  key={item}
+                  className="inline-flex items-center gap-3 border border-[var(--hairline)] bg-background/55 px-4 py-3 text-[13px] md:text-[14px] leading-snug text-foreground/80"
+                >
+                  <span className="font-serif italic text-[18px] leading-none" style={{ color: GOLD }}>
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span>{item}</span>
+                </span>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
         {/* COMPOSITION */}
-        <div className="relative mt-2 md:-mt-52 lg:-mt-72 xl:-mt-96 grid grid-cols-1 md:grid-cols-12 md:gap-0 items-end">
+        <div className="relative mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-12 md:gap-0 items-end">
           {/* ELEVATE */}
           <Reveal as="article" className="md:col-span-5 md:text-center relative z-10">
             <div
@@ -777,7 +828,7 @@ function HowISupportSection() {
           {/* CENTER PORTRAIT */}
           <div className="md:col-span-2 relative z-20 order-first md:order-none flex justify-center md:block md:-ml-28 md:-mr-20 lg:-ml-40 lg:-mr-24 pointer-events-none md:self-end">
             <img
-              src={supportPortrait.url}
+              src={supportPortrait}
               alt="Amna Imran"
               draggable={false}
               className="select-none object-contain object-bottom w-[360px] sm:w-[480px] md:w-auto md:h-[960px] lg:h-[1140px] xl:h-[1240px] md:max-w-none mx-auto md:-mb-10 lg:-mb-14 -translate-x-3 md:-translate-x-20 lg:-translate-x-28 xl:-translate-x-32"
@@ -837,7 +888,7 @@ function WhyDifferentSection() {
       <Container className="relative">
         {/* Portrait — absolute overlay bridging heading and pillar cards */}
         <img
-          src={approachPortrait.url}
+          src={approachPortrait}
           alt=""
           aria-hidden
           className="pointer-events-none hidden md:block absolute right-[-120px] lg:right-[-220px] top-[100%] lg:top-[108%] -translate-y-1/2 z-10 h-[920px] lg:h-[1120px] w-auto object-cover object-bottom select-none scale-[1.5] origin-bottom"
@@ -1051,21 +1102,67 @@ function TwoPathwaysSection() {
   );
 }
 
+/* ---------------- CREDIBILITY ---------------- */
+
+function CredibilitySection() {
+  const credentials = [
+    { logo: icfLogo, label: "ICF ACC Certified", scale: 1.76 },
+    { logo: gallupLogo, label: "Gallup Certified CliftonStrengths Coach", scale: 1.5 },
+    { logo: cdpLogo, label: "Certified Diversity Professional (CDP®)", scale: 1.62 },
+    { logo: inseadLogo, label: "INSEAD-Trained Gender Specialist", scale: 1.53 },
+  ];
+
+  return (
+    <section className="bg-background border-b border-[var(--hairline)]/70 pt-14 md:pt-20 pb-6 md:pb-8">
+      <Container>
+        <Reveal>
+          <h2 className="font-serif text-[2.6rem] sm:text-[3.2rem] md:text-[4.2rem] leading-[1.02] text-foreground max-w-4xl">
+            Grounded in coaching, research, and systems insight.
+          </h2>
+        </Reveal>
+
+        <div className="mt-12 md:mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {credentials.map((credential, i) => (
+            <Reveal key={credential.label} delay={i * 70} as="article">
+              <div className="border-t border-[var(--hairline)] pt-6">
+                <div className="flex h-24 md:h-32 items-center justify-center">
+                  <img
+                    src={credential.logo}
+                    alt={credential.label}
+                    loading="lazy"
+                    className="h-14 md:h-16 w-auto max-w-[260px] object-contain"
+                    style={{ transform: `scale(${credential.scale})`, transformOrigin: "center" }}
+                  />
+                </div>
+                <h3 className="mt-4 mx-auto max-w-[15rem] text-center font-serif text-[18px] md:text-[20px] leading-snug text-foreground/85">
+                  {credential.label}
+                </h3>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </Container>
+    </section>
+  );
+}
+
 /* ---------------- FOUNDER ---------------- */
 
 function FounderSection() {
   return (
-    <section className="pt-0 md:pt-2 pb-0">
+    <section className="bg-[var(--cream)]/60 border-y border-[var(--hairline)]/60 pt-0 md:pt-2 pb-0">
       <Container>
         <div className="grid gap-6 md:grid-cols-12 items-end">
           <div className="md:col-span-5">
             <Reveal>
-              <img
-                src={founderPortrait.url}
-                alt="Amna Imran — Founder"
-                className="block h-[480px] md:h-[560px] lg:h-[640px] w-auto object-contain object-bottom select-none"
-                draggable={false}
-              />
+              <div className="relative h-[320px] md:h-[380px] lg:h-[440px] overflow-hidden">
+                <img
+                  src={founderPortrait}
+                  alt="Amna Imran — Founder"
+                  className="absolute bottom-0 left-0 h-[480px] md:h-[560px] lg:h-[640px] w-auto object-contain object-bottom select-none"
+                  draggable={false}
+                />
+              </div>
             </Reveal>
           </div>
           <div className="md:col-span-7 md:pl-6 md:pb-10">

@@ -17,7 +17,7 @@ import { Container, Eyebrow, Hairline } from "@/components/site/primitives";
 export const Route = createFileRoute("/private-payment")({
   head: () => ({
     meta: [
-      { title: "Private Payment — Amna Imran" },
+      { title: "Private Payment | Amna Imran" },
       { name: "robots", content: "noindex, nofollow, noarchive" },
       { name: "googlebot", content: "noindex, nofollow" },
       { name: "description", content: "Private payment page for confirmed clients. Direct-link access only." },

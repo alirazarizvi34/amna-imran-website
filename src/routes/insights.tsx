@@ -4,7 +4,7 @@ import { Container, Eyebrow, Reveal } from "@/components/site/primitives";
 export const Route = createFileRoute("/insights")({
   head: () => ({
     meta: [
-      { title: "Insights — Writing on Advancement & Strategy | Amna Imran" },
+      { title: "Insights | Leadership Strategy, Gender Equity & Career Advancement" },
       { name: "description", content: "Articles on women's advancement, sponsorship, organizational strategy, and the architecture of senior progression." },
       { property: "og:title", content: "Insights — Writing on Advancement & Strategy" },
       { property: "og:description", content: "Essays on advancement, sponsorship, and the systems women navigate." },

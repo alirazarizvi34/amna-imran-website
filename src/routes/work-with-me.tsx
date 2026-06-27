@@ -15,7 +15,7 @@ import {
 export const Route = createFileRoute("/work-with-me")({
   head: () => ({
     meta: [
-      { title: "Work With Me — Strategic Coaching for High-Potential Women | Amna Imran" },
+      { title: "Work With Amna | Executive Coaching for Women Ready to Advance" },
       {
         name: "description",
         content:
@@ -240,36 +240,36 @@ function WorkWithMe() {
           </Reveal>
 
           <div className="mt-14 grid gap-6 md:grid-cols-2">
-            <Reveal as="article" className="relative bg-background border border-[var(--hairline)] p-8 md:p-10 flex flex-col">
+            <Reveal as="article" className="relative bg-foreground text-background p-8 md:p-10 flex flex-col">
               <div className="absolute top-0 left-0 h-1 w-24 bg-[var(--gold)]" />
               <div className="eyebrow text-[var(--gold)]">Signature Program</div>
-              <h3 className="mt-5 font-serif text-[1.85rem] md:text-[2.1rem] leading-tight text-foreground">
+              <h3 className="mt-5 font-serif text-[1.85rem] md:text-[2.1rem] leading-tight text-background">
                 ELEVATE<span className="text-[var(--gold)]">™</span> Strategic Advancement Program
               </h3>
-              <p className="mt-4 text-[15px] text-foreground/75 leading-relaxed font-light">
+              <p className="mt-4 text-[15px] text-background/80 leading-relaxed font-light">
                 A six-month, evidence-based coaching program to translate capability into recognised
                 progression.
               </p>
               <a
                 href="#elevate"
-                className="mt-8 self-start inline-flex items-center gap-2 border-b border-foreground/40 pb-1 text-[11px] uppercase tracking-[0.22em] hover:border-foreground"
+                className="mt-8 self-start inline-flex items-center gap-2 border-b border-background/50 pb-1 text-[11px] uppercase tracking-[0.22em] text-background hover:border-background"
               >
                 Explore ELEVATE <span aria-hidden>↓</span>
               </a>
             </Reveal>
-            <Reveal delay={100} as="article" className="relative bg-foreground text-background p-8 md:p-10 flex flex-col">
+            <Reveal delay={100} as="article" className="relative bg-[var(--cream)]/70 border border-[var(--hairline)] p-8 md:p-10 flex flex-col">
               <div className="absolute top-0 left-0 h-1 w-24 bg-[var(--gold)]" />
               <div className="eyebrow text-[var(--gold)]">Career Continuity</div>
-              <h3 className="mt-5 font-serif text-[1.85rem] md:text-[2.1rem] leading-tight text-background">
+              <h3 className="mt-5 font-serif text-[1.85rem] md:text-[2.1rem] leading-tight text-foreground">
                 Lead &amp; Thrive Through Motherhood<span className="text-[var(--gold)]">™</span>
               </h3>
-              <p className="mt-4 text-[15px] text-background/80 leading-relaxed font-light">
+              <p className="mt-4 text-[15px] text-foreground/75 leading-relaxed font-light">
                 Strategic career continuity for high-potential women through maternity leave,
                 re-entry, and identity transition.
               </p>
               <a
                 href="#lead-thrive"
-                className="mt-8 self-start inline-flex items-center gap-2 border-b border-background/50 pb-1 text-[11px] uppercase tracking-[0.22em] text-background hover:border-background"
+                className="mt-8 self-start inline-flex items-center gap-2 border-b border-foreground/40 pb-1 text-[11px] uppercase tracking-[0.22em] text-foreground hover:border-foreground"
               >
                 Explore Lead &amp; Thrive <span aria-hidden>↓</span>
               </a>
@@ -284,12 +284,11 @@ function WorkWithMe() {
           <div className="grid gap-12 md:gap-16 md:grid-cols-12 items-end">
             <div className="md:col-span-8">
               <Reveal>
-                <Eyebrow className="text-[var(--gold)]">ELEVATE™ · Six Months</Eyebrow>
+                <Eyebrow className="text-[var(--gold)]">ELEVATE™</Eyebrow>
               </Reveal>
               <Reveal delay={80}>
                 <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.6rem] leading-[1.03] text-background">
-                  You are already performing. So why isn't that{" "}
-                  <em className="text-[var(--gold)] not-italic font-light">translating?</em>
+                  ELEVATE<span className="text-[var(--gold)]">™</span> — Strategic Advancement Program
                 </h2>
               </Reveal>
               <Reveal delay={140}>
@@ -302,12 +301,24 @@ function WorkWithMe() {
               </Reveal>
             </div>
             <Reveal delay={180} className="md:col-span-4 md:text-right">
-              <div className="eyebrow text-background/55">Format</div>
-              <div className="mt-2 font-serif text-2xl md:text-[1.6rem] text-background leading-snug">
+              <div className="font-serif text-2xl md:text-[1.6rem] text-background leading-snug">
                 6 months · up to 12 private sessions
               </div>
             </Reveal>
           </div>
+
+          <Reveal>
+            <div className="mt-14 border border-background/20 bg-background/5 p-7 md:p-9 max-w-4xl">
+              <div className="eyebrow text-[var(--gold)]">Who this is for</div>
+              <p className="mt-5 font-serif text-2xl md:text-[1.85rem] leading-snug text-background">
+                Senior women who are performing well and ready to move with intention.
+              </p>
+              <p className="mt-5 text-[15px] md:text-[16px] text-background/80 leading-relaxed max-w-3xl">
+                Whether your career has plateaued, a promotion decision is approaching, or you want
+                to build something that is as sustainable as it is ambitious.
+              </p>
+            </div>
+          </Reveal>
 
           <Reveal>
             <div className="mt-16 max-w-3xl">
@@ -372,40 +383,33 @@ function WorkWithMe() {
               ))}
             </div>
           </div>
-        </Container>
-      </section>
-
-      {/* PARTICIPANT EXPERIENCE — accordion reveal */}
-      <section className="py-20 md:py-28">
-        <Container>
-          <Reveal>
-            <Eyebrow>ELEVATE Experience</Eyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
-              What Participants Typically{" "}
-              <em className="text-[var(--gold)] not-italic font-light">Experience.</em>
-            </h2>
-            <p className="mt-6 max-w-2xl text-[14px] text-foreground/60 leading-relaxed italic">
-              Results vary by individual. These reflect what participants commonly report — not
-              guarantees.
-            </p>
-          </Reveal>
 
           <Reveal>
-            <Accordion type="single" collapsible className="mt-12 border-t border-[var(--hairline)] max-w-4xl">
+            <div className="mt-20">
+              <div className="eyebrow text-[var(--gold)]">ELEVATE Experience</div>
+              <h3 className="mt-5 font-serif text-3xl md:text-4xl leading-tight text-background max-w-3xl">
+                What participants typically experience.
+              </h3>
+              <p className="mt-5 max-w-2xl text-[14px] text-background/60 leading-relaxed italic">
+                Results vary by individual. These reflect what participants commonly report — not
+                guarantees.
+              </p>
+            </div>
+            <Accordion type="single" collapsible className="mt-10 border-t border-background/20 max-w-4xl">
               {PARTICIPANT_EXPERIENCE.map((p, i) => (
-                <AccordionItem key={p.t} value={`p-${i}`} className="border-b border-[var(--hairline)]">
+                <AccordionItem key={p.t} value={`p-${i}`} className="border-b border-background/20">
                   <AccordionTrigger className="py-6 text-left hover:no-underline group">
                     <div className="flex items-baseline gap-5 pr-4">
                       <span className="font-serif italic text-[var(--gold)] text-xl md:text-2xl shrink-0 w-10">
                         {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-serif text-[18px] md:text-[20px] text-foreground leading-snug">
+                      <span className="font-serif text-[18px] md:text-[20px] text-background leading-snug">
                         {p.t}
                       </span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent className="pb-6 pl-[3.25rem]">
-                    <p className="text-[15px] text-foreground/75 leading-relaxed max-w-xl">{p.d}</p>
+                    <p className="text-[15px] text-background/75 leading-relaxed max-w-xl">{p.d}</p>
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -499,6 +503,9 @@ function WorkWithMe() {
                   Most return-to-work support focuses on emotional adjustment or work-life balance
                   alone. This program approaches the transition strategically.
                 </p>
+                <p className="mt-5 font-serif text-[1.35rem] md:text-[1.65rem] leading-snug text-foreground">
+                  Lead &amp; Thrive Through Motherhood is designed to:
+                </p>
               </Reveal>
             </div>
             <div className="md:col-span-7">
@@ -554,12 +561,12 @@ function WorkWithMe() {
                 ))}
               </ul>
             </Reveal>
-            <Reveal delay={100} as="div" className="bg-foreground text-background p-8 md:p-10">
+            <Reveal delay={100} as="div" className="bg-[var(--cream)]/80 border border-[var(--hairline)] p-8 md:p-10">
               <div className="eyebrow text-[var(--gold)]">The Outcome — Clients leave with</div>
-              <Hairline className="my-5 bg-background/20" />
+              <Hairline className="my-5" />
               <ul className="space-y-3.5">
                 {LT_OUTCOMES.map((o) => (
-                  <li key={o} className="flex gap-4 text-background/90">
+                  <li key={o} className="flex gap-4 text-foreground/85">
                     <span aria-hidden className="mt-2.5 h-px w-5 bg-[var(--gold)] shrink-0" />
                     <span className="text-[15px] leading-relaxed">{o}</span>
                   </li>

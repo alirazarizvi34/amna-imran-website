@@ -4,7 +4,7 @@ import { Container, Eyebrow, Hairline, Reveal } from "@/components/site/primitiv
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Begin a Strategic Conversation | Amna Imran" },
+      { title: "Contact Amna | Book a Strategic Leadership Conversation" },
       { name: "description", content: "Book a Strategic Clarity Call or schedule an Organizational Consultation." },
       { property: "og:title", content: "Contact — Begin a Strategic Conversation" },
       { property: "og:description", content: "Begin with a strategic conversation." },
@@ -16,8 +16,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 const INTEREST = [
-  "ELEVATE Strategic Advancement Program",
-  "Lead & Thrive Through Motherhood",
+  "ELEVATE™ Strategic Advancement Program",
+  "Lead & Thrive Through Motherhood™",
   "Organizational Coaching",
   "Leadership Workshops",
   "DEI Consultancy",
