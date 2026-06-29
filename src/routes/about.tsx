@@ -86,13 +86,13 @@ function About() {
             <div className="md:col-span-7">
               <Reveal><Eyebrow>About · Amna Imran</Eyebrow></Reveal>
               <Reveal delay={80}>
-                <h1 className="mt-7 font-serif text-[2.4rem] md:text-5xl lg:text-[3.6rem] leading-[1.05] text-foreground">
+                <h1 className="mt-7 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                   The goal is not to fix women. It is to equip them to navigate — and ultimately{" "}
                   <em className="text-[var(--gold)] not-italic font-light">influence</em> — the systems in which they lead.
                 </h1>
               </Reveal>
               <Reveal delay={160}>
-                <p className="mt-7 max-w-xl text-[16px] md:text-[17px] text-foreground/80 leading-relaxed font-light">
+                <p className="mt-7 max-w-xl text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                   My work sits at the intersection of individual capability and organizational reality —
                   combining coaching, evidence-based gender insight, strengths science, and systems
                   awareness to help high-potential women progress without compromising authenticity or
@@ -132,7 +132,7 @@ function About() {
       <section className="border-b border-[var(--hairline)]/60 py-20 md:py-28">
         <Container>
           <Reveal delay={80}>
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.06] text-foreground max-w-4xl">
+            <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-4xl">
               At the intersection of{" "}
               <em className="text-[var(--gold)] not-italic font-light">capability</em> and organizational reality.
             </h2>
@@ -149,7 +149,7 @@ function About() {
                 <h3 className="md:col-span-5 font-serif italic text-[28px] md:text-[34px] lg:text-[38px] leading-[1.1] text-[var(--gold)] transition-transform duration-500 group-hover:translate-x-2">
                   {p.t}
                 </h3>
-                <p className="md:col-span-7 text-[16px] md:text-[17px] text-foreground/80 leading-[1.85] font-light self-center">
+                <p className="md:col-span-7 text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light self-center">
                   {p.d}
                 </p>
               </Reveal>
@@ -175,7 +175,7 @@ function About() {
             <div className="md:col-span-5 lg:sticky lg:top-24 self-start">
               <Reveal><Eyebrow>A Personal Note</Eyebrow></Reveal>
               <Reveal delay={80}>
-                <h2 className="mt-5 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.06] text-foreground">
+                <h2 className="mt-5 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                   A Personal{" "}
                   <em className="text-[var(--gold)] not-italic font-light">Realization.</em>
                 </h2>
@@ -319,7 +319,7 @@ function About() {
               <Eyebrow>Why This Matters</Eyebrow>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground">
+              <h2 className="mt-6 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 Equipping women to navigate — and{" "}
                 <em className="text-[var(--gold)] not-italic font-light">ultimately influence</em>{" "}
                 the systems in which they lead.
@@ -327,7 +327,7 @@ function About() {
             </Reveal>
             <Reveal delay={120}>
               <div className="mt-8 md:mt-10 max-w-2xl">
-                <p className="text-[16px] md:text-[17px] text-foreground/80 leading-relaxed font-light">
+                <p className="text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                   I do not believe the solution is to reshape women into replicas of a traditional
                   leadership archetype.
                 </p>
@@ -403,7 +403,7 @@ function About() {
         <Container className="py-20 md:py-28">
           <div className="max-w-3xl">
             <Eyebrow className="text-[var(--gold)]">Begin</Eyebrow>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-background">
+            <h2 className="mt-6 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-background">
               Ready to move forward{" "}
               <em className="text-[var(--gold)] not-italic font-light">strategically?</em>
             </h2>

@@ -205,13 +205,13 @@ function Organizations() {
         <Container>
           <Reveal className="hidden">
             <div className="max-w-4xl">
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-foreground">
+              <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 Four ways to move from{" "}
                 <em className="text-[var(--gold)] not-italic font-light">
                   intention to measurable outcome.
                 </em>
               </h2>
-              <p className="mt-6 max-w-4xl text-[18px] md:text-[21px] text-foreground/80 leading-relaxed font-light">
+              <p className="mt-6 max-w-4xl text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                 Designed for HR, L&amp;D, and leadership teams ready to go beyond programs — into
                 structural change that actually retains and advances talent.
               </p>
@@ -220,13 +220,13 @@ function Organizations() {
           <div className="max-w-4xl">
             <Reveal><Eyebrow>For Organizations</Eyebrow></Reveal>
             <Reveal delay={80}>
-              <h1 className="mt-7 font-serif text-[2.6rem] sm:text-5xl md:text-6xl lg:text-[4.4rem] leading-[1.02] text-foreground">
+              <h1 className="mt-7 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 The investment is real.<br />
                 <em className="text-[var(--gold)] not-italic font-light">The returns have not been.</em>
               </h1>
             </Reveal>
             <Reveal delay={160}>
-              <p className="mt-8 max-w-2xl text-[17px] text-foreground/80 leading-relaxed font-light">
+              <p className="mt-8 max-w-2xl text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                 A decade of DEI programs. The pipeline is still broken. Here is what the research says
                 about why — and what actually changes things.
               </p>
@@ -257,7 +257,7 @@ function Organizations() {
       <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
         <Container>
           <Reveal>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
+            <h2 className="mt-6 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-3xl">
               The diagnostic is clear — the{" "}
               <em className="text-[var(--gold)] not-italic font-light">prescriptions have not been.</em>
             </h2>
@@ -291,13 +291,13 @@ function Organizations() {
         <Container>
           <Reveal>
             <div className="max-w-4xl">
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-foreground">
+              <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 Four ways to move from{" "}
                 <em className="text-[var(--gold)] not-italic font-light">
                   intention to measurable outcome.
                 </em>
               </h2>
-              <p className="mt-6 max-w-4xl text-[18px] md:text-[21px] text-foreground/80 leading-relaxed font-light">
+              <p className="mt-6 max-w-4xl text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                 Designed for HR, L&amp;D, and leadership teams ready to go beyond programs &mdash; into
                 structural change that actually retains and advances talent.
               </p>
@@ -347,13 +347,13 @@ function Organizations() {
         <Container>
           <Reveal className="hidden">
             <div className="max-w-4xl">
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-foreground">
+              <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 Four ways to move from{" "}
                 <em className="text-[var(--gold)] not-italic font-light">
                   intention to measurable outcome.
                 </em>
               </h2>
-              <p className="mt-6 max-w-4xl text-[18px] md:text-[21px] text-foreground/80 leading-relaxed font-light">
+              <p className="mt-6 max-w-4xl text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                 Designed for HR, L&amp;D, and leadership teams ready to go beyond programs — into
                 structural change that actually retains and advances talent.
               </p>
@@ -361,10 +361,10 @@ function Organizations() {
           </Reveal>
           <Reveal>
             <div className="hidden">
-              <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
+              <h2 className="mt-6 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-3xl">
                 The engagements<em className="text-[var(--gold)] not-italic font-light">.</em>
               </h2>
-              <p className="mt-7 max-w-2xl text-[16px] text-foreground/75 leading-relaxed font-light">
+              <p className="mt-7 max-w-2xl text-[15px] md:text-[16px] text-foreground/75 leading-relaxed font-light">
                 Four ways to move from intention to measurable outcome. Designed for HR, L&amp;D,
                 and leadership teams ready to go beyond programs — into structural change that
                 actually retains and advances talent.
@@ -458,7 +458,7 @@ function Organizations() {
       <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
         <Container>
           <Reveal>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
+            <h2 className="mt-6 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-3xl">
               What partners typically{" "}
               <em className="text-[var(--gold)] not-italic font-light">achieve.</em>
             </h2>
@@ -486,15 +486,15 @@ function Organizations() {
         <Container>
           <div className="grid gap-12 md:gap-16 md:grid-cols-2 items-start">
             <Reveal>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.05] text-foreground">
+              <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 Organizations serious about{" "}
                 <em className="text-[var(--gold)] not-italic font-light">progression.</em>
               </h2>
-              <p className="mt-7 max-w-md text-[16px] text-foreground/75 leading-relaxed font-light">
+              <p className="mt-7 max-w-md text-[15px] md:text-[16px] text-foreground/75 leading-relaxed font-light">
                 Leadership equity is not achieved through intention alone. It requires deliberate
                 development, structured support, and informed navigation of organizational realities.
               </p>
-              <p className="mt-5 max-w-md text-[16px] text-foreground/75 leading-relaxed font-light">
+              <p className="mt-5 max-w-md text-[15px] md:text-[16px] text-foreground/75 leading-relaxed font-light">
                 If your organization is committed to strengthening its leadership pipeline through
                 strategic, evidence-based coaching and consulting, I welcome a conversation.
               </p>
@@ -528,7 +528,7 @@ function Organizations() {
       <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
         <Container>
           <Reveal>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.25rem] leading-[1.04] text-foreground max-w-3xl">
+            <h2 className="mt-6 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-3xl">
               The training behind the{" "}
               <em className="text-[var(--gold)] not-italic font-light">methodology.</em>
             </h2>
@@ -558,11 +558,11 @@ function Organizations() {
           <div className="grid gap-10 md:grid-cols-12 items-end">
             <div className="md:col-span-8">
             <div className="eyebrow text-[var(--gold)]">Begin</div>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.6rem] leading-[1.05] text-background">
+            <h2 className="mt-6 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-background">
               Strengthen the pipeline. Support the leaders{" "}
               <em className="text-[var(--gold)] not-italic font-light">already within it.</em>
             </h2>
-            <p className="mt-8 max-w-2xl text-[16px] text-background/70 leading-relaxed font-light">
+            <p className="mt-8 max-w-2xl text-[15px] md:text-[16px] text-background/70 leading-relaxed font-light">
               A confidential discussion to explore your leadership goals, current challenges, and
               how structured advancement coaching could support your talent strategy.
             </p>

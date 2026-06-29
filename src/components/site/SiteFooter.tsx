@@ -66,13 +66,13 @@ export function SiteFooter() {
                 <li key={c.label} className="flex items-center gap-3.5 text-[14px] text-foreground/70">
                   <span className="h-9 w-12 shrink-0 flex items-center justify-center">
                     {c.markOnly ? (
-                      <span className="block h-7 w-7 overflow-hidden rounded-full">
+                      <span className="block h-8 w-8 overflow-hidden rounded-full">
                         <img
                           src={c.logo}
                           alt=""
                           aria-hidden
                           loading="lazy"
-                          className="h-7 w-auto max-w-none object-left"
+                          className="h-8 w-auto max-w-none object-left"
                         />
                       </span>
                     ) : (
@@ -81,11 +81,7 @@ export function SiteFooter() {
                         alt=""
                         aria-hidden
                         loading="lazy"
-                        className="object-contain h-5 w-auto max-w-full"
-                        style={{
-                          transform: `scale(${c.scale})`,
-                          transformOrigin: "center",
-                        }}
+                        className="h-8 w-8 object-contain"
                       />
                     )}
                   </span>

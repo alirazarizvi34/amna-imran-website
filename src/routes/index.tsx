@@ -8,10 +8,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import heroPortrait from "@/assets/amna-hero-cutout.png";
+import heroPortrait from "@/assets/HERO UPDATED.png";
 import supportPortrait from "@/assets/amna-support.png";
 import approachPortrait from "@/assets/amna-approach.png";
 import founderPortrait from "@/assets/amna-founder.png";
+import motherhoodTitleBackground from "@/assets/dark brown background.png";
 import icfLogo from "@/assets/icf-acc.png";
 import gallupLogo from "@/assets/gallup-strengths.png";
 import cdpLogo from "@/assets/cdp.png";
@@ -159,7 +160,6 @@ function HomePage() {
       <HowISupportSection />
       <WhyDifferentSection />
       <TwoPathwaysSection />
-      <CredibilitySection />
       <FounderSection />
       <FinalCTA />
     </>
@@ -192,7 +192,7 @@ function Hero() {
               </p>
             </Reveal>
             <Reveal delay={200}>
-              <div className="mt-9 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6">
+              <div className="mt-9 mb-8 md:mb-12 flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6">
                 <Link
                   to="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-6 py-4 text-[11px] uppercase tracking-[0.22em] font-medium hover:bg-foreground/90 transition-colors"
@@ -210,14 +210,13 @@ function Hero() {
             </Reveal>
           </div>
 
-          {/* RIGHT — portrait + giant AMNA / IMRAN */}
-          <div className="md:col-span-7 lg:col-span-7 relative">
-            <div className="relative w-full h-[420px] sm:h-[500px] md:h-[600px] lg:h-[700px] mb-[-60px] md:mb-[-110px]">
-              {/* z-20 — full portrait with baked-in AMNA IMRAN lettering, transparent background */}
+          {/* RIGHT — portrait + readable editorial name */}
+          <div className="md:col-span-7 lg:col-span-7 relative flex items-center">
+            <div className="relative w-full mb-[-30px] md:mb-[-70px]">
               <img
                 src={heroPortrait}
                 alt="Amna Imran — Executive Coach"
-                className="absolute inset-0 z-20 mx-auto h-full w-auto object-contain object-center select-none pointer-events-none"
+                className="relative z-20 w-full max-w-[840px] h-auto object-contain select-none pointer-events-none md:ml-auto"
                 draggable={false}
               />
             </div>
@@ -232,10 +231,10 @@ function Hero() {
 
 function CredentialsStrip() {
   const items = [
-    { logo: icfLogo, label: "ICF ACC Certified", scale: 1.76 },
-    { logo: gallupLogo, label: "Gallup Certified CliftonStrengths Coach", scale: 1.5 },
-    { logo: cdpLogo, label: "Certified Diversity Professional (CDP®)", scale: 1.62 },
-    { logo: inseadLogo, label: "INSEAD-trained Gender Specialist", scale: 1.53 },
+    { logo: icfLogo, label: "ICF ACC Certified", scale: 1.36 },
+    { logo: gallupLogo, label: "Gallup Certified CliftonStrengths Coach", scale: 1.16 },
+    { logo: cdpLogo, label: "Certified Diversity Professional (CDP®)", scale: 1.24 },
+    { logo: inseadLogo, label: "INSEAD-trained Gender Specialist", scale: 1.18 },
   ];
   return (
     <section className="relative z-30 border-y border-[var(--hairline)]/70 bg-[var(--cream)]/70">
@@ -246,12 +245,12 @@ function CredentialsStrip() {
               key={c.label}
               className="py-6 px-5 flex flex-col items-center text-center gap-3"
             >
-              <div className="h-16 md:h-20 flex items-center justify-center">
+              <div className="h-12 md:h-16 flex items-center justify-center">
                 <img
                   src={c.logo}
                   alt={c.label}
                   loading="lazy"
-                  className="object-contain h-14 md:h-16 w-auto max-w-[260px]"
+                  className="object-contain h-10 md:h-12 w-auto max-w-[210px]"
                   style={{ transform: `scale(${c.scale})`, transformOrigin: "center" }}
                 />
               </div>
@@ -269,12 +268,176 @@ function CredentialsStrip() {
 /* ---------------- HIGH PERFORMANCE ALONE ---------------- */
 
 function HighPerformanceSection() {
+  const titleGold = "#C99700";
+  const shapeGold = "#BDA06B";
+
+  return (
+    <section className="relative overflow-hidden bg-[#f7f4ee] py-12 md:py-16 lg:py-20">
+      <Container className="relative">
+        <Reveal>
+          <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
+            <span style={{ color: titleGold }}>High Performance</span>{" "}
+            <span>Alone,</span>
+            <br />
+            <span className="block pl-[2.15em]">
+              <span style={{ color: titleGold }}>Does Not </span>
+              <em className="font-light italic" style={{ color: titleGold }}>
+                Guarantee
+              </em>{" "}
+              <span>Progression</span>
+            </span>
+          </h2>
+        </Reveal>
+
+        <div className="relative mt-16 grid gap-14 lg:grid-cols-[0.95fr_1.05fr] lg:gap-24">
+          <div className="relative">
+            <div className="grid gap-8 md:grid-cols-[0.75fr_1.25fr] md:items-center">
+              <Reveal>
+                <div className="relative">
+                  <div
+                    aria-hidden
+                    className="absolute -right-3 top-1/2 hidden h-48 w-28 -translate-y-1/2 rounded-r-full border-r-[4px] md:block"
+                    style={{ borderColor: titleGold }}
+                  />
+                  <p
+                    className="relative z-10 text-[2.6rem] sm:text-[3.1rem] md:text-[3.45rem] leading-[0.92] text-foreground"
+                    style={{ fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none" }}
+                  >
+                    The traditional
+                    <br />
+                    <span className="pl-10" style={{ color: titleGold }}>
+                      formula
+                    </span>
+                  </p>
+                </div>
+              </Reveal>
+
+              <ul className="space-y-3">
+                {TRADITIONAL.map((t, i) => (
+                  <Reveal key={t} delay={i * 50}>
+                    <li
+                      className={`mx-auto rounded-lg px-6 py-4 text-center text-[15px] md:text-[16px] leading-snug text-black shadow-none ${
+                        i === 0
+                          ? "max-w-[21rem] md:-translate-x-5"
+                          : i === 1
+                            ? "max-w-[25rem]"
+                            : i === 2
+                              ? "max-w-[25rem]"
+                              : "max-w-[23rem] md:-translate-x-4"
+                      }`}
+                      style={{ backgroundColor: shapeGold }}
+                    >
+                      {t}
+                    </li>
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-20 flex flex-col gap-6 md:mt-24 md:flex-row md:items-center">
+              <Reveal>
+                <div
+                  className="relative flex h-[220px] w-[220px] shrink-0 items-center justify-center rounded-full border-[3px] text-right md:-ml-20 md:h-[260px] md:w-[260px]"
+                  style={{ backgroundColor: shapeGold, borderColor: titleGold }}
+                >
+                  <p className="font-serif text-[2.15rem] md:text-[2.45rem] leading-[1.02] text-black">
+                    <span className="block">Common</span>
+                    <span className="block">internal</span>
+                    <span
+                      className="block -mt-1 text-[2.05rem] md:text-[2.35rem] text-white"
+                      style={{ fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none" }}
+                    >
+                      narratives
+                    </span>
+                  </p>
+                </div>
+              </Reveal>
+
+              <ul className="space-y-4 md:-ml-8 md:space-y-5">
+                {INTERNAL_NARRATIVES.map((q, i) => (
+                  <Reveal key={q} delay={i * 60}>
+                    <li
+                      className={`font-sans italic text-[15px] md:text-[16px] leading-relaxed text-black ${
+                        i === 0
+                          ? "max-w-[20rem] md:-translate-x-2"
+                          : i === 1
+                            ? "max-w-[21rem] md:translate-x-2"
+                            : i === 2
+                              ? "max-w-[18rem] md:translate-x-5"
+                              : "max-w-[19rem] md:translate-x-0"
+                      }`}
+                    >
+                      &ldquo;{q}&rdquo;
+                    </li>
+                  </Reveal>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="relative lg:pt-8">
+            <Reveal delay={80}>
+              <p
+                className="text-[2.7rem] sm:text-[3.35rem] md:text-[4rem] leading-[0.78] text-black"
+                style={{ fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none" }}
+              >
+                Yet{" "}
+                <span style={{ color: titleGold }}>
+                  progression
+                </span>
+                <br />
+                <span className="ml-28">often </span>
+                <span style={{ color: titleGold }}>stalls</span>
+              </p>
+            </Reveal>
+
+            <Reveal delay={140}>
+              <div className="mt-8 max-w-[46rem] space-y-5 text-[15px] md:text-[16px] leading-relaxed text-black font-light">
+                <p>
+                  &mdash; sometimes subtly, sometimes abruptly. Research across organizations shows
+                  that advancement depends on far more than performance alone. Factors such as{" "}
+                  <strong>
+                    visibility, sponsorship, perceived leadership presence, and alignment with
+                    informal power structures
+                  </strong>{" "}
+                  play decisive roles.
+                </p>
+                <p>
+                  Without visibility into these patterns, stalled progress can feel personal rather
+                  than systemic &mdash; leading many capable professionals to work harder while
+                  seeing diminishing returns.
+                </p>
+                <p>
+                  When these dynamics are unclear, stalled progress can feel personal rather than
+                  systemic - leading many capable professionals to work harder while seeing
+                  diminishing returns.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={220}>
+              <p className="mt-20 max-w-[44rem] text-center font-serif text-[1.35rem] md:text-[1.65rem] leading-[1.22] text-black">
+                <span className="block" style={{ color: titleGold }}>
+                  The challenge is not a lack of ambition or ability &mdash;
+                </span>
+                <span className="block">but a lack of access to the unwritten rules of</span>
+                <span className="block">advancement.</span>
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
+
+function LegacyHighPerformanceSection() {
   return (
     <section className="relative overflow-hidden py-16 md:py-24 bg-[var(--cream)]/40">
       <Container className="relative">
         {/* Headline */}
         <Reveal>
-          <h2 className="font-serif text-[2.4rem] sm:text-[3rem] md:text-[4rem] lg:text-[4.6rem] leading-[1.02] tracking-tight max-w-5xl">
+          <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] tracking-tight max-w-5xl">
             <span style={{ color: GOLD }}>High Performance</span>
             <span className="text-foreground">&nbsp;Alone,</span>
             <br />
@@ -332,7 +495,7 @@ function HighPerformanceSection() {
               </p>
             </Reveal>
             <Reveal delay={140}>
-              <p className="relative mt-7 text-[15px] md:text-[16px] text-foreground leading-relaxed max-w-xl">
+              <p className="relative mt-7 text-[15px] md:text-[16px] text-foreground leading-relaxed font-light max-w-xl">
                 — sometimes subtly, sometimes abruptly. Research across organizations shows that
                 advancement depends on far more than performance alone. Factors such as{" "}
                 <strong className="font-semibold" style={{ color: GOLD }}>
@@ -376,7 +539,7 @@ function HighPerformanceSection() {
                   <br />
                   internal
                   <br />
-                  <span className="text-white" style={{ fontFamily: '"Oooh Baby", cursive' }}>narratives</span>
+                  <span className="text-white" style={{ fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none" }}>narratives</span>
                 </p>
                 {/* Speech bubble tail pointing right */}
                 <div
@@ -459,10 +622,10 @@ function ProgressNarrativeSection() {
   ];
 
   return (
-    <section className="bg-[var(--cream)]/70 border-y border-[var(--hairline)]/60 py-20 md:py-28">
-      <Container>
+    <section className="relative z-10 overflow-hidden bg-[var(--cream)]/70 border-t border-[var(--hairline)]/60 pt-20 md:pt-28 pb-32 md:pb-44">
+      <Container className="relative">
         <Reveal>
-          <h2 className="font-serif text-[2rem] sm:text-[2.4rem] md:text-5xl lg:text-[3.2rem] leading-[1.05] text-foreground max-w-4xl">
+          <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-4xl">
             <em className="not-italic font-light" style={{ color: GOLD }}>
               The Progress Narrative —
             </em>{" "}
@@ -470,12 +633,12 @@ function ProgressNarrativeSection() {
           </h2>
         </Reveal>
         <Reveal delay={80}>
-          <p className="mt-8 text-[15px] md:text-[16px] text-foreground/80 leading-relaxed max-w-3xl">
+          <p className="mt-8 text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light max-w-3xl">
             On the surface, it appears that gender equality at work has largely been achieved. Women are highly educated, widely represented in professional roles, and many organizations publicly champion diversity.
           </p>
         </Reveal>
         <Reveal delay={120}>
-          <p className="mt-6 text-[15px] md:text-[16px] text-foreground/80 leading-relaxed max-w-3xl">
+          <p className="mt-6 text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light max-w-3xl">
             Yet research in organizational behavior and leadership studies reveals persistent gaps beneath this progress narrative:
           </p>
         </Reveal>
@@ -501,7 +664,7 @@ function ProgressNarrativeSection() {
         </div>
 
         <Reveal delay={100}>
-          <p className="mt-10 text-[15px] md:text-[16px] text-foreground/80 leading-relaxed max-w-3xl">
+          <p className="mt-10 text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light max-w-3xl">
             These dynamics are rarely explicit or intentional. They are embedded in everyday organizational processes — performance reviews, leadership selection, project allocation, and informal influence channels.
           </p>
         </Reveal>
@@ -514,41 +677,53 @@ function ProgressNarrativeSection() {
 
 function MotherhoodSection() {
   return (
-    <section className="relative bg-background overflow-hidden">
+    <section className="relative z-20 -mt-24 md:-mt-36 bg-[#f3eddb] overflow-visible border-b border-[var(--hairline)]/60">
+      <svg
+        aria-hidden
+        viewBox="0 0 1440 120"
+        preserveAspectRatio="none"
+        className="pointer-events-none absolute left-0 top-0 z-10 h-24 w-full text-[var(--cream)] opacity-80 md:h-32"
+      >
+        <path
+          d="M0,0 H1440 V46 C1260,16 1160,94 970,78 C770,61 646,20 460,42 C300,61 158,102 0,74 Z"
+          fill="currentColor"
+        />
+      </svg>
       {/* Top dark curved shape */}
-      <div className="relative">
-        <div className="relative h-[180px] md:h-[210px]">
-          <svg
+      <div className="relative z-20">
+        <div className="relative h-[230px] md:h-[320px]">
+          <img
+            src={motherhoodTitleBackground}
+            alt=""
             aria-hidden
-            viewBox="0 0 1440 260"
-            preserveAspectRatio="none"
-            className="absolute inset-0 w-full h-full text-foreground"
-          >
-            <path
-              d="M0,0 L820,0 Q 760,200 0,240 Z"
-              fill="currentColor"
-            />
-          </svg>
-          <Container className="relative h-full flex items-start pt-8 md:pt-10">
+            className="absolute left-[-4vw] top-[-22px] h-[190px] w-[64vw] max-w-none object-fill md:top-[-35px] md:h-[260px] md:w-[56vw] lg:left-[-2vw] lg:w-[50vw]"
+            draggable={false}
+          />
+          <Container className="relative h-full flex items-start justify-start pt-10 md:pt-12">
             <Reveal>
-              <h2 className="font-serif leading-[0.95] text-background">
-                <span className="block text-[2.4rem] md:text-[3.4rem]">
-                  <span className="not-italic">The </span>
-                  <span className="text-background mr-2" style={{ fontFamily: '"Oooh Baby", cursive' }}>Motherhood</span>{" "}
-                  <span className="not-italic" style={{ color: GOLD }}>Penalty</span>
-                </span>
-                <span className="block mt-2 text-[1.2rem] md:text-[1.55rem]" style={{ color: GOLD }}>
-                  <span className="text-background/85">and</span> Life Transitions
+              <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.02] text-background max-w-4xl text-left md:ml-12 lg:ml-16">
+                <span style={{ color: "#d09b00" }}>The </span>
+                <span
+                  className="text-background text-[3.6rem] md:text-[5rem] leading-none"
+                  style={{ fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none" }}
+                >
+                  Motherhood
+                </span>{" "}
+                <em className="not-italic font-light" style={{ color: "#d09b00" }}>
+                  Penalty
+                </em>
+                <span className="block text-[1.55rem] md:text-[2rem]">
+                  <span style={{ color: "#d09b00" }}>and</span> Life Transitions
                 </span>
               </h2>
             </Reveal>
           </Container>
         </div>
 
-        <Container className="relative -mt-10 md:-mt-16">
-          <div className="md:ml-[36%] max-w-2xl space-y-4 pt-4">
+        <Container className="relative -mt-12 md:-mt-24">
+          <div className="ml-auto max-w-4xl space-y-5 pt-4">
             <Reveal>
-              <p className="text-[15px] md:text-[16px] text-foreground/85 leading-relaxed">
+              <p className="text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                 Research across regions consistently shows that career interruptions associated
                 with caregiving — particularly motherhood — can significantly alter advancement
                 trajectories. Even when women return with equal or greater capability, they may be
@@ -556,13 +731,13 @@ function MotherhoodSection() {
               </p>
             </Reveal>
             <Reveal delay={100}>
-              <p className="text-[15px] md:text-[16px] text-foreground/75 leading-relaxed">
+              <p className="text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                 Meanwhile, men often experience neutral or even positive career effects from
                 fatherhood (the fatherhood bonus).
               </p>
             </Reveal>
             <Reveal delay={160}>
-              <p className="text-[14px] md:text-[15px] text-foreground/65 leading-relaxed">
+              <p className="text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                 These patterns persist despite formal policies designed to support work-life balance.
               </p>
             </Reveal>
@@ -571,38 +746,42 @@ function MotherhoodSection() {
       </div>
 
     {/* Psychological Impact */}
-    <Container className="pt-8 md:pt-10 pb-16 md:pb-20">
+    <Container className="pt-8 md:pt-12 pb-16 md:pb-20">
       <Reveal>
         <h3 className="text-center font-serif leading-[0.95]">
-          <span className="text-[1.8rem] md:text-[2.4rem]" style={{ color: GOLD }}>The </span>
-          <span className="text-[2.4rem] md:text-[3.4rem] text-foreground" style={{ fontFamily: '"Oooh Baby", cursive' }}>
+          <span className="text-[2.1rem] md:text-[3rem]" style={{ color: "#d09b00" }}>The </span>
+          <span className="text-[3.5rem] md:text-[5rem] text-black" style={{ fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none" }}>
             Psychological
           </span>
-          <span className="text-[1.8rem] md:text-[2.4rem]" style={{ color: GOLD }}> Impact</span>
+          <span className="text-[2.1rem] md:text-[3rem]" style={{ color: "#d09b00" }}> impact</span>
         </h3>
       </Reveal>
 
-      <div className="mt-8 md:mt-10 max-w-5xl mx-auto">
+      <div className="mt-10 md:mt-12 grid gap-10 md:grid-cols-[0.9fr_1.1fr] md:items-center max-w-5xl mx-auto">
         <Reveal>
-          <p className="text-center text-[15px] md:text-[16px] text-foreground/80 leading-relaxed max-w-3xl mx-auto">
-            Because modern bias is subtle rather than explicit, it often produces self-doubt rather than resistance. Women may feel:
+          <p className="max-w-md text-[13px] md:text-[14px] uppercase tracking-[0.08em] font-semibold text-foreground leading-relaxed">
+            When the path forward is
+            <br />
+            <em className="normal-case tracking-normal font-serif italic text-[1.2rem] md:text-[1.35rem] font-light text-[#9b6f3d]">
+              opaque and high-risk,
+            </em>
+            <br />
+            even the most capable women start to doubt
+            <br />
+            <em className="normal-case tracking-normal font-serif italic text-[1.2rem] md:text-[1.35rem] font-light text-[#9b6f3d]">
+              not their talent &mdash; but their belonging.
+            </em>
           </p>
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            {[
-              "Inadequate despite strong performance",
-              "Responsible for stalled progress",
-              "Uncertain about how to advocate for themselves",
-              "Torn between authenticity and expectations",
-              "Exhausted from navigating competing demands",
-            ].map((t) => (
+          <div className="grid gap-3 sm:grid-cols-2">
+            {PSYCH_IMPACT.map(({ t, Icon }) => (
               <span
                 key={t}
-                className="inline-flex items-center gap-2.5 rounded-full px-5 py-3 text-[13px] md:text-[14px] text-foreground/85"
-                style={{ backgroundColor: "rgba(184,154,106,0.18)" }}
+                className="inline-flex items-center gap-3 rounded-full border border-[#d6c8ae] bg-[#eadfc9] px-5 py-3 text-[13px] md:text-[14px] text-foreground/85"
               >
+                <Icon size={15} strokeWidth={1.8} className="text-[#9b6f3d]" />
                 {t}
               </span>
             ))}
@@ -612,11 +791,14 @@ function MotherhoodSection() {
 
       <Reveal>
         <p
-          className="mt-10 md:mt-12 max-w-4xl mx-auto text-center font-serif text-[1.55rem] md:text-[2rem] leading-[1.4]"
+          className="mt-14 md:mt-20 max-w-3xl mx-auto text-center text-[15px] md:text-[16px] leading-relaxed font-light text-foreground/80"
         >
-          <span className="text-foreground/85">
-            Over time, this can lead to disengagement, burnout, or premature career exits — not because ambition is lacking, but because the path forward feels opaque and high-risk.
-          </span>
+          Over time, this leads not to quitting ambition &mdash; but to{" "}
+          <em className="font-serif italic text-[#9b6f3d]">disengaging from</em>
+          <br />
+          <em className="font-serif italic text-[#9b6f3d]">
+            a game whose rules were never explained.
+          </em>
         </p>
       </Reveal>
     </Container>
@@ -632,7 +814,7 @@ function WayForwardSection() {
     <section className="py-20 md:py-32">
       <Container>
         <Reveal>
-          <h2 className="font-serif text-[2rem] sm:text-[2.4rem] md:text-5xl lg:text-[3.2rem] leading-[1.05] text-foreground max-w-3xl">
+          <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-3xl">
             A More Strategic Way{" "}
             <em className="not-italic font-light italic" style={{ color: GOLD }}>
               Forward
@@ -657,7 +839,7 @@ function WayForwardSection() {
                   className="font-serif italic text-lg md:text-xl"
                   style={{ color: GOLD }}
                 >
-                  Capability {String(active + 1).padStart(2, "0")} / 06
+                  {String(active + 1).padStart(2, "0")} / 06
                 </div>
                 <h3 className="mt-5 font-serif text-[1.7rem] md:text-[2rem] leading-[1.15] text-foreground">
                   {FORWARD[active].t}
@@ -732,29 +914,23 @@ function HowISupportSection() {
       <div className="mx-auto max-w-[1400px]">
         {/* TITLE */}
         <Reveal>
-          <h2 className="font-serif leading-[0.95] text-foreground">
-            <span
-              className="block font-light"
-              style={{ color: GOLD, fontSize: "clamp(2.2rem, 5.2vw, 4.4rem)" }}
-            >
+          <h2 className="font-serif text-[2.5rem] sm:text-[3.1rem] md:text-[4rem] lg:text-[4.4rem] leading-[0.9] text-foreground max-w-6xl">
+            <span className="block font-light" style={{ color: "#d09b00" }}>
               How I Support High-Potential
             </span>
             <span
-              className="block -mt-3 md:-mt-6 lg:-mt-10 text-foreground"
-              style={{
-                fontFamily: '"Oooh Baby", cursive',
-                fontSize: "clamp(4rem, 10vw, 8rem)",
-                lineHeight: 1,
-              }}
+              className="block -mt-3 ml-[4.6em] text-[4.2rem] sm:text-[5.4rem] md:-mt-6 md:ml-[5.1em] md:text-[7.4rem] lg:-mt-8 lg:ml-[5.15em] lg:text-[8.3rem] leading-none text-black"
+              style={{ fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none" }}
             >
               Women
             </span>
           </h2>
         </Reveal>
 
+        {false && (
         <Reveal delay={80}>
           <div className="mt-8 md:mt-10 max-w-5xl">
-            <p className="max-w-3xl text-[16px] md:text-[18px] leading-relaxed text-foreground/80 font-light">
+            <p className="max-w-3xl text-[15px] md:text-[16px] leading-relaxed text-foreground/80 font-light">
               I work with ambitious professionals who want their impact, influence, and career
               trajectory to reflect their true capability — without stepping away from roles they
               have invested years building.
@@ -781,9 +957,10 @@ function HowISupportSection() {
             </div>
           </div>
         </Reveal>
+        )}
 
         {/* COMPOSITION */}
-        <div className="relative mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-12 md:gap-0 items-end">
+        <div className="relative -mt-28 md:-mt-48 lg:-mt-[17.5rem] grid grid-cols-1 md:grid-cols-12 md:gap-0 items-end">
           {/* ELEVATE */}
           <Reveal as="article" className="md:col-span-5 md:text-center relative z-10">
             <div
@@ -826,12 +1003,16 @@ function HowISupportSection() {
           </Reveal>
 
           {/* CENTER PORTRAIT */}
-          <div className="md:col-span-2 relative z-20 order-first md:order-none flex justify-center md:block md:-ml-28 md:-mr-20 lg:-ml-40 lg:-mr-24 pointer-events-none md:self-end">
+          <div className="md:col-span-2 relative z-20 order-first md:order-none flex justify-center md:block md:-ml-28 md:-mr-20 lg:-ml-40 lg:-mr-24 pointer-events-none md:self-end md:-mt-12 lg:-mt-20">
+            <div
+              aria-hidden
+              className="absolute bottom-1 left-1/2 z-0 h-10 w-[78%] -translate-x-1/2 rounded-full bg-black/25 blur-2xl md:bottom-[-4px] md:h-12 md:w-[560px] md:-translate-x-[57%] lg:w-[660px]"
+            />
             <img
               src={supportPortrait}
               alt="Amna Imran"
               draggable={false}
-              className="select-none object-contain object-bottom w-[360px] sm:w-[480px] md:w-auto md:h-[960px] lg:h-[1140px] xl:h-[1240px] md:max-w-none mx-auto md:-mb-10 lg:-mb-14 -translate-x-3 md:-translate-x-20 lg:-translate-x-28 xl:-translate-x-32"
+              className="relative z-10 select-none object-contain object-bottom w-[360px] sm:w-[480px] md:w-auto md:h-[960px] lg:h-[1140px] xl:h-[1240px] md:max-w-none mx-auto md:-mb-10 lg:-mb-14 -translate-x-3 md:-translate-x-20 lg:-translate-x-28 xl:-translate-x-32"
             />
           </div>
 
@@ -896,7 +1077,7 @@ function WhyDifferentSection() {
         />
         <div className="relative z-0 md:max-w-[62%]">
             <Reveal>
-              <h2 className="font-serif text-[2rem] sm:text-[2.4rem] md:text-[3rem] leading-[1.05] text-foreground">
+              <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 <span style={{ color: GOLD }}>Why My Approach </span>
                 <em className="italic font-light text-foreground">Is Different</em>
               </h2>
@@ -909,11 +1090,11 @@ function WhyDifferentSection() {
             <Reveal delay={140}>
               <p className="mt-10 font-serif text-[1.2rem] md:text-[1.55rem] leading-snug text-foreground max-w-2xl text-center">
                 My work sits at the intersection of{" "}
-                <em className="not-italic" style={{ color: GOLD, fontFamily: '"Oooh Baby", cursive', WebkitTextStroke: `1px ${GOLD}`, fontWeight: 400 }}>
+                <em className="mx-1.5 inline-block not-italic text-[2rem] md:text-[2.45rem] leading-none align-[-0.16em]" style={{ color: GOLD, fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none", fontWeight: 700 }}>
                   Individual capability
                 </em>{" "}
                 and{" "}
-                <em className="not-italic" style={{ color: GOLD, fontFamily: '"Oooh Baby", cursive', WebkitTextStroke: `1px ${GOLD}`, fontWeight: 400 }}>
+                <em className="mx-1.5 inline-block not-italic text-[2rem] md:text-[2.45rem] leading-none align-[-0.16em]" style={{ color: GOLD, fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none", fontWeight: 700 }}>
                   Organizational reality
                 </em>
               </p>
@@ -921,19 +1102,25 @@ function WhyDifferentSection() {
         </div>
 
         {/* Three pillars */}
-        <div className="relative z-0 mt-14 grid gap-5 md:gap-6 md:grid-cols-3 md:max-w-[62%]">
+        <div className="relative z-0 mt-14 grid gap-6 md:grid-cols-3 md:max-w-[62%]">
           {PILLARS.map((p, i) => (
-            <Reveal key={p.t} delay={i * 70} as="article" className="bg-[var(--cream)]/60 border border-[var(--hairline)] p-6 md:p-7 pl-7 min-h-[180px] relative">
-              <span aria-hidden className="absolute left-0 top-0 bottom-0 w-[2px]" style={{ background: GOLD }} />
-              <h3 className="font-serif text-[1.15rem] md:text-[1.3rem] text-foreground">
-                {p.t}
-              </h3>
-              <p
-                className="mt-4 text-[14px] leading-relaxed"
-                style={{ color: GOLD }}
-              >
-                {p.d}
-              </p>
+            <Reveal
+              key={p.t}
+              delay={i * 70}
+              as="article"
+              className="bg-[var(--cream)]/45 p-4 md:p-5 min-h-[190px] relative"
+            >
+              <div className="h-full min-h-[160px] border border-[#c7baaa]/75 bg-[var(--background)]/70 px-5 py-6 md:px-6 md:py-7 shadow-[inset_1px_1px_0_rgba(255,255,255,0.65),inset_-1px_-1px_0_rgba(36,32,28,0.08),0_2px_0_rgba(36,32,28,0.05)]">
+                <h3 className="font-serif text-[1.15rem] md:text-[1.25rem] leading-snug text-foreground">
+                  {p.t}
+                </h3>
+                <p
+                  className="mt-6 text-[14px] md:text-[15px] leading-snug"
+                  style={{ color: GOLD }}
+                >
+                  {p.d}
+                </p>
+              </div>
             </Reveal>
           ))}
         </div>
@@ -947,7 +1134,7 @@ function WhyDifferentSection() {
               <span
                 aria-hidden
                 className="pointer-events-none absolute left-1/2 text-[4.5rem] md:text-[5.5rem] leading-none z-0 select-none"
-                style={{ color: GOLD, fontFamily: '"Oooh Baby", cursive', top: "58px", transform: "translateX(-92%)" }}
+                style={{ color: GOLD, fontFamily: '"Rastanty Cortez", cursive', fontFeatureSettings: "normal", fontVariantLigatures: "none", top: "58px", transform: "translateX(-92%)" }}
               >
                 Vs
               </span>
@@ -964,11 +1151,11 @@ function WhyDifferentSection() {
                                 {c.a}
                               </span>
                               <span aria-hidden />
-                              <span className="font-serif italic text-[15px] md:text-[17px] text-foreground/45 text-left">
+                              <span className="font-serif font-semibold italic text-[15px] md:text-[17px] text-foreground/50 text-left">
                                 {c.b}
                               </span>
                               <ChevronRight
-                                className="h-4 w-4 shrink-0 text-foreground/50 transition-transform group-data-[state=open]:rotate-90 justify-self-end -translate-x-2"
+                                className="h-4 w-4 shrink-0 text-foreground/65 transition-transform group-data-[state=open]:rotate-90 justify-self-end -translate-x-2"
                                 aria-hidden
                               />
                             </>
@@ -978,7 +1165,7 @@ function WhyDifferentSection() {
                                 {c.a}
                               </span>
                               <ChevronRight
-                                className="h-4 w-4 text-foreground/50 transition-transform group-data-[state=open]:rotate-90"
+                                className="h-4 w-4 text-foreground/65 transition-transform group-data-[state=open]:rotate-90"
                                 aria-hidden
                               />
                             </span>
@@ -1038,7 +1225,7 @@ function TwoPathwaysSection() {
     <section className="py-14 md:py-20 bg-[var(--cream)]/60 border-y border-[var(--hairline)]/60">
       <Container>
         <Reveal>
-          <h2 className="font-serif text-[2rem] md:text-[2.6rem] leading-tight text-foreground max-w-3xl">
+          <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-3xl">
             Choose the pathway that{" "}
             <em className="not-italic italic font-light" style={{ color: GOLD }}>
               fits your context.
@@ -1116,7 +1303,7 @@ function CredibilitySection() {
     <section className="bg-background border-b border-[var(--hairline)]/70 pt-14 md:pt-20 pb-6 md:pb-8">
       <Container>
         <Reveal>
-          <h2 className="font-serif text-[2.6rem] sm:text-[3.2rem] md:text-[4.2rem] leading-[1.02] text-foreground max-w-4xl">
+          <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-4xl">
             Grounded in coaching, research, and systems insight.
           </h2>
         </Reveal>
@@ -1150,31 +1337,31 @@ function CredibilitySection() {
 
 function FounderSection() {
   return (
-    <section className="bg-[var(--cream)]/60 border-y border-[var(--hairline)]/60 pt-0 md:pt-2 pb-0">
-      <Container>
-        <div className="grid gap-6 md:grid-cols-12 items-end">
+    <section className="relative z-10 overflow-hidden bg-[var(--cream)]/60 border-y border-[var(--hairline)]/60 pt-0 pb-0">
+      <Container className="relative">
+        <div className="grid min-h-[360px] gap-8 md:min-h-[420px] md:grid-cols-12 md:items-center lg:min-h-[470px]">
           <div className="md:col-span-5">
             <Reveal>
-              <div className="relative h-[320px] md:h-[380px] lg:h-[440px] overflow-hidden">
+              <div className="relative h-[360px] md:h-[420px] lg:h-[470px] overflow-hidden">
                 <img
                   src={founderPortrait}
                   alt="Amna Imran — Founder"
-                  className="absolute bottom-0 left-0 h-[480px] md:h-[560px] lg:h-[640px] w-auto object-contain object-bottom select-none"
+                  className="absolute bottom-[-55px] left-0 h-[660px] w-auto object-contain object-bottom select-none md:bottom-[-80px] md:h-[810px] lg:bottom-[-110px] lg:h-[960px]"
                   draggable={false}
                 />
               </div>
             </Reveal>
           </div>
-          <div className="md:col-span-7 md:pl-6 md:pb-10">
+          <div className="md:col-span-7 md:pl-8">
             <Reveal>
-              <h2 className="font-serif text-[2.2rem] md:text-[3rem] leading-[1.05] text-foreground">
+              <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 <em className="not-italic italic font-light" style={{ color: GOLD }}>
                   Amna Imran.
                 </em>
               </h2>
             </Reveal>
             <Reveal delay={100}>
-              <p className="mt-6 max-w-xl text-[16px] md:text-[17px] text-foreground/80 leading-relaxed font-light">
+              <p className="mt-5 max-w-xl text-[15px] md:text-[16px] text-foreground/80 leading-relaxed font-light">
                 Gender-informed leadership strategist helping high-potential women progress without
                 burnout or compromise.
               </p>
@@ -1204,7 +1391,7 @@ function FinalCTA() {
         <div className="grid gap-10 md:grid-cols-12 items-end">
           <div className="md:col-span-8">
             <Reveal>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-[3.6rem] leading-[1.05] text-background">
+              <h2 className="font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-background">
                 Ready to move forward{" "}
                 <em className="not-italic font-light italic" style={{ color: GOLD }}>
                   strategically?

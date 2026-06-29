@@ -31,7 +31,7 @@ function Insights() {
         <Container>
           <Reveal><Eyebrow>Insights</Eyebrow></Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-7 font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-foreground max-w-3xl">
+            <h1 className="mt-7 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-3xl">
               Insights
             </h1>
           </Reveal>
