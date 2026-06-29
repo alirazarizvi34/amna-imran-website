@@ -12,6 +12,7 @@ import {
 import appCss from "../styles.css?url";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import logoSrc from "@/assets/logo.png";
 
 function NotFoundComponent() {
   return (
@@ -65,7 +66,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Amna Imran — Executive Coaching for High-Potential Women" },
+      { title: "Amna Imran | Executive Coaching for Women Leaders" },
       {
         name: "description",
         content:
@@ -83,6 +84,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Inter:wght@300;400;500;600&family=Oooh+Baby&display=swap",
       },
+      { rel: "icon", type: "image/png", href: logoSrc },
+      { rel: "apple-touch-icon", href: logoSrc },
     ],
   }),
   shellComponent: RootShell,

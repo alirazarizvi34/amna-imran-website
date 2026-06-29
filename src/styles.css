@@ -2,6 +2,19 @@
 @source "../src";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: "Rastanty Cortez";
+  src:
+    url("@/assets/fonts/Rastanty-Cortez-Regular.woff2") format("woff2"),
+    local("Rastanty Cortez"),
+    local("RastantyCortez"),
+    local("Rastanty Cortez Regular"),
+    local("RastantyCortez-Regular");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

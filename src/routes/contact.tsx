@@ -4,7 +4,7 @@ import { Container, Eyebrow, Hairline, Reveal } from "@/components/site/primitiv
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Begin a Strategic Conversation | Amna Imran" },
+      { title: "Contact Amna | Book a Strategic Leadership Conversation" },
       { name: "description", content: "Book a Strategic Clarity Call or schedule an Organizational Consultation." },
       { property: "og:title", content: "Contact — Begin a Strategic Conversation" },
       { property: "og:description", content: "Begin with a strategic conversation." },
@@ -16,8 +16,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 const INTEREST = [
-  "ELEVATE Strategic Advancement Program",
-  "Lead & Thrive Through Motherhood",
+  "ELEVATE™ Strategic Advancement Program",
+  "Lead & Thrive Through Motherhood™",
   "Organizational Coaching",
   "Leadership Workshops",
   "DEI Consultancy",
@@ -33,13 +33,13 @@ function Contact() {
         <Container className="pt-16 md:pt-24 pb-14 md:pb-20">
           <Reveal><Eyebrow>Contact</Eyebrow></Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-6 font-serif text-4xl md:text-5xl lg:text-[3.6rem] leading-[1.04] text-foreground max-w-4xl">
+            <h1 className="mt-7 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-4xl">
               Begin with a strategic{" "}
               <em className="text-[var(--gold)] not-italic font-light">conversation.</em>
             </h1>
           </Reveal>
           <Reveal delay={140}>
-            <p className="mt-6 max-w-2xl text-[16px] md:text-[17px] text-foreground/75 leading-relaxed font-light">
+            <p className="mt-6 max-w-2xl text-[15px] md:text-[16px] text-foreground/75 leading-relaxed font-light">
               Whether you are exploring private coaching or organizational support, the first step is
               a confidential conversation to understand your context, goals, and the most appropriate
               pathway.
@@ -89,7 +89,7 @@ function Contact() {
       <section id="book" className="py-14 md:py-20 bg-[var(--cream)] border-y border-[var(--hairline)]/60">
         <Container>
           <Eyebrow>Schedule</Eyebrow>
-          <h2 className="mt-5 max-w-2xl font-serif text-3xl md:text-4xl leading-snug text-foreground">
+          <h2 className="mt-5 max-w-2xl font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
             Book a time.
           </h2>
           <div className="mt-8 border border-[var(--hairline)] bg-background min-h-[240px] flex flex-col items-center justify-center px-8 py-12 text-center">
@@ -107,7 +107,7 @@ function Contact() {
           <div className="grid gap-10 md:gap-14 md:grid-cols-12">
             <div className="md:col-span-5">
               <Eyebrow>Message</Eyebrow>
-              <h2 className="mt-5 font-serif text-3xl md:text-4xl leading-[1.08] text-foreground">
+              <h2 className="mt-5 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 Prefer to send a{" "}
                 <em className="text-[var(--gold)] not-italic font-light">message?</em>
               </h2>

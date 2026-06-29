@@ -1,15 +1,16 @@
 import { Link } from "@tanstack/react-router";
 import { Container, Hairline } from "./primitives";
-import icfLogo from "@/assets/cred-icf.png.asset.json";
-import gallupLogo from "@/assets/cred-gallup.png.asset.json";
-import cdpLogo from "@/assets/cred-cdp.png.asset.json";
-import inseadLogo from "@/assets/cred-insead.png.asset.json";
+import icfLogo from "@/assets/icf-acc.png";
+import gallupLogo from "@/assets/gallup-strengths.png";
+import cdpLogo from "@/assets/cdp.png";
+import inseadLogo from "@/assets/insead.png";
+import logoSrc from "@/assets/logo.png";
 
 const CREDENTIALS = [
-  { logo: icfLogo.url, label: "ICF ACC Certified" },
-  { logo: gallupLogo.url, label: "Gallup Certified CliftonStrengths Coach" },
-  { logo: cdpLogo.url, label: "Certified Diversity Professional (CDP®)" },
-  { logo: inseadLogo.url, label: "Gender Specialist trained at INSEAD" },
+  { logo: icfLogo, label: "ICF ACC Certified", scale: 1.76 },
+  { logo: gallupLogo, label: "Gallup Certified CliftonStrengths Coach", scale: 1.5 },
+  { logo: cdpLogo, label: "Certified Diversity Professional (CDP®)", scale: 1.62 },
+  { logo: inseadLogo, label: "Gender Specialist trained at INSEAD", scale: 1, markOnly: true },
 ];
 
 export function SiteFooter() {
@@ -18,12 +19,21 @@ export function SiteFooter() {
       <Container className="py-20">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="flex flex-col leading-none">
+            <Link to="/" aria-label="Amna Imran home" className="flex items-center gap-3">
+              <img
+                src={logoSrc}
+                alt=""
+                aria-hidden
+                className="h-11 w-auto shrink-0"
+                draggable={false}
+              />
+              <span className="flex flex-col leading-none">
               <span className="font-serif text-2xl tracking-tight">Amna Imran</span>
               <span className="mt-1.5 text-[10px] uppercase tracking-[0.28em] text-foreground/55">
                 Coaching · Consulting
+                </span>
               </span>
-            </div>
+            </Link>
             <p className="mt-6 max-w-sm text-foreground/70 text-[15px] leading-relaxed">
               Executive coaching and organizational consulting for high-potential women
               navigating advancement in complex environments.
@@ -51,18 +61,31 @@ export function SiteFooter() {
 
           <div className="md:col-span-4">
             <div className="eyebrow text-foreground/50">Credentials</div>
-            <ul className="mt-5 space-y-4 text-[14px] text-foreground/75">
+            <ul className="mt-3 space-y-2">
               {CREDENTIALS.map((c) => (
-                <li key={c.label} className="flex items-center gap-3">
-                  <div className="h-10 w-16 shrink-0 flex items-center justify-center">
-                    <img
-                      src={c.logo}
-                      alt={c.label}
-                      loading="lazy"
-                      className="object-contain max-h-full max-w-full"
-                    />
-                  </div>
-                  <span>{c.label}</span>
+                <li key={c.label} className="flex items-center gap-3.5 text-[14px] text-foreground/70">
+                  <span className="h-9 w-12 shrink-0 flex items-center justify-center">
+                    {c.markOnly ? (
+                      <span className="block h-8 w-8 overflow-hidden rounded-full">
+                        <img
+                          src={c.logo}
+                          alt=""
+                          aria-hidden
+                          loading="lazy"
+                          className="h-8 w-auto max-w-none object-left"
+                        />
+                      </span>
+                    ) : (
+                      <img
+                        src={c.logo}
+                        alt=""
+                        aria-hidden
+                        loading="lazy"
+                        className="h-8 w-8 object-contain"
+                      />
+                    )}
+                  </span>
+                  <span className="leading-snug">{c.label}</span>
                 </li>
               ))}
             </ul>

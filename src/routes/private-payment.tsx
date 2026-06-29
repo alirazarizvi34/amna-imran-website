@@ -17,7 +17,7 @@ import { Container, Eyebrow, Hairline } from "@/components/site/primitives";
 export const Route = createFileRoute("/private-payment")({
   head: () => ({
     meta: [
-      { title: "Private Payment — Amna Imran" },
+      { title: "Private Payment | Amna Imran" },
       { name: "robots", content: "noindex, nofollow, noarchive" },
       { name: "googlebot", content: "noindex, nofollow" },
       { name: "description", content: "Private payment page for confirmed clients. Direct-link access only." },
@@ -51,11 +51,11 @@ function PrivatePayment() {
           <Container className="pt-14 md:pt-20 pb-12 md:pb-16">
             <div className="max-w-3xl">
               <Eyebrow>Private Payment</Eyebrow>
-              <h1 className="mt-6 font-serif text-3xl md:text-5xl lg:text-6xl leading-[1.06] text-foreground">
+              <h1 className="mt-7 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
                 Secure payment link for{" "}
                 <em className="text-[var(--gold)] not-italic font-light">confirmed clients.</em>
               </h1>
-              <p className="mt-6 text-base md:text-lg text-foreground/70 leading-relaxed font-light">
+              <p className="mt-6 text-[15px] md:text-[16px] text-foreground/70 leading-relaxed font-light">
                 This page is intended for clients who have received a direct payment link following a confirmed coaching or consulting engagement.
               </p>
               <p className="mt-5 text-[13px] text-foreground/55 leading-relaxed">
@@ -112,7 +112,7 @@ function PrivatePayment() {
         <section className="py-14 md:py-20 bg-[var(--cream)] border-y border-[var(--hairline)]/60">
           <Container>
             <Eyebrow>Payment Options</Eyebrow>
-            <h2 className="mt-5 max-w-2xl font-serif text-2xl md:text-4xl leading-[1.1] text-foreground">
+            <h2 className="mt-5 max-w-2xl font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground">
               Available payment methods.
             </h2>
             <div className="mt-10 grid gap-px bg-[var(--hairline)] border border-[var(--hairline)] md:grid-cols-3">
@@ -132,7 +132,7 @@ function PrivatePayment() {
           <Container>
             <div className="max-w-2xl">
               <Eyebrow>Need Support?</Eyebrow>
-              <p className="mt-6 text-base md:text-lg text-foreground/75 leading-relaxed font-light">
+              <p className="mt-6 text-[15px] md:text-[16px] text-foreground/75 leading-relaxed font-light">
                 If you have questions about your payment link or engagement details, please contact{" "}
                 <span className="text-foreground">[Email Address to be added]</span>.
               </p>

@@ -4,7 +4,7 @@ import { Container, Eyebrow, Reveal } from "@/components/site/primitives";
 export const Route = createFileRoute("/insights")({
   head: () => ({
     meta: [
-      { title: "Insights — Writing on Advancement & Strategy | Amna Imran" },
+      { title: "Insights | Leadership Strategy, Gender Equity & Career Advancement" },
       { name: "description", content: "Articles on women's advancement, sponsorship, organizational strategy, and the architecture of senior progression." },
       { property: "og:title", content: "Insights — Writing on Advancement & Strategy" },
       { property: "og:description", content: "Essays on advancement, sponsorship, and the systems women navigate." },
@@ -31,7 +31,7 @@ function Insights() {
         <Container>
           <Reveal><Eyebrow>Insights</Eyebrow></Reveal>
           <Reveal delay={80}>
-            <h1 className="mt-7 font-serif text-4xl md:text-5xl lg:text-[3.5rem] leading-[1.05] text-foreground max-w-3xl">
+            <h1 className="mt-7 font-serif text-[2.1rem] sm:text-4xl md:text-[2.6rem] lg:text-[3rem] leading-[1.08] text-foreground max-w-3xl">
               Insights
             </h1>
           </Reveal>
